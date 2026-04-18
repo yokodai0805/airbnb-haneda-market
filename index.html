@@ -1,222 +1,83 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Airbnb 羽田空港 日別在庫数推移 (フィルター版)</title>
+<meta charset="utf-8">
+<title>羽田空港 競合市場在庫 (2026-04-18)</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
-  * { box-sizing: border-box; }
-  body {
-    font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', system-ui, sans-serif;
-    margin: 0; padding: 24px; background: #F7F7F7; color: #222;
-  }
-  .container {
-    max-width: 1280px; margin: 0 auto; background: #fff;
-    padding: 28px 32px; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,.06);
-  }
-  h1 { margin: 0 0 4px 0; color: #FF5A5F; font-size: 24px; }
-  .sub { color: #666; font-size: 14px; margin-bottom: 20px; }
-  .meta-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px; margin-bottom: 24px;
-  }
-  .meta-card {
-    background: #FFF8F8; border-left: 4px solid #FF5A5F;
-    padding: 10px 14px; border-radius: 6px;
-  }
-  .meta-card .label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: .5px; }
-  .meta-card .value { font-size: 15px; font-weight: 600; margin-top: 2px; }
-  .chart-wrap { position: relative; height: 500px; margin: 20px 0; }
-  .chart-wrap.small { height: 280px; }
-  h2 { font-size: 17px; margin: 28px 0 10px; color: #333; }
-  table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
-  th, td { padding: 8px 10px; text-align: center; border-bottom: 1px solid #EEE; }
-  th { background: #FF5A5F; color: #fff; position: sticky; top: 0; }
-  tr.weekend { background: #FFF4E6; }
-  .table-wrap { max-height: 360px; overflow-y: auto; border: 1px solid #EEE; border-radius: 6px; }
-  .controls { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
-  .controls button {
-    background: #fff; border: 1.5px solid #FF5A5F; color: #FF5A5F;
-    padding: 6px 14px; border-radius: 20px; cursor: pointer; font-size: 13px;
-  }
-  .controls button.active { background: #FF5A5F; color: #fff; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 24px; background:#f7f8fa; color:#222; }
+  h1 { font-size: 20px; }
+  .meta { color:#555; font-size: 13px; margin-bottom: 16px; }
+  .card { background:#fff; border-radius:8px; padding:16px; margin-bottom:20px; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; }
+  .kpi { border:1px solid #e3e6ea; border-radius:6px; padding:10px; background:#fafbfc; }
+  .kpi .label { font-size:11px; color:#666; }
+  .kpi .value { font-size:20px; font-weight:600; margin-top:4px; }
+  .pos { color:#c0392b; } .neg { color:#2980b9; } .flat { color:#7f8c8d; }
+  canvas { max-width:100%; }
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>羽田空港エリア Airbnb 日別在庫数推移 (フィルター版)</h1>
-  <div class="sub">まるまる貸切 × ゲストチョイス × 大人5人 × 1泊 / 2026-04-18 〜 2026-10-17 (183日間)</div>
+<h1>羽田空港 競合市場在庫数モニタリング</h1>
+<div class="meta">羽田空港エリア / まるまる貸切 × ゲストチョイス / 大人5人 / 1泊 ・ 取得日: 2026-04-18 ・ 期間: 2026-04-18〜2026-10-17 (183日)</div>
 
-  <div class="meta-grid">
-    <div class="meta-card"><div class="label">ロケーション</div><div class="value">羽田空港</div></div>
-    <div class="meta-card"><div class="label">施設タイプ</div><div class="value">まるまる貸切</div></div>
-    <div class="meta-card"><div class="label">注目施設</div><div class="value">ゲストチョイス</div></div>
-    <div class="meta-card"><div class="label">旅行者</div><div class="value">大人 5人</div></div>
-    <div class="meta-card"><div class="label">最小</div><div class="value" id="minVal">-</div></div>
-    <div class="meta-card"><div class="label">最大</div><div class="value" id="maxVal">-</div></div>
-    <div class="meta-card"><div class="label">平均</div><div class="value" id="avgVal">-</div></div>
-    <div class="meta-card"><div class="label">中央値</div><div class="value" id="medVal">-</div></div>
-  </div>
-
-  <h2>日別在庫数の推移</h2>
-  <div class="controls">
-    <button data-v="raw" class="active">生データ</button>
-    <button data-v="ma7">7日移動平均</button>
-    <button data-v="both">両方表示</button>
-  </div>
-  <div class="chart-wrap"><canvas id="chart"></canvas></div>
-
-  <h2>月別平均件数</h2>
-  <div class="chart-wrap small"><canvas id="monthChart"></canvas></div>
-
-  <h2>曜日別平均件数</h2>
-  <div class="chart-wrap small"><canvas id="wdayChart"></canvas></div>
-
-  <h2>日別データ一覧</h2>
-  <div class="table-wrap">
-    <table id="dataTable">
-      <thead><tr><th>チェックイン日</th><th>曜日</th><th>件数</th></tr></thead>
-      <tbody></tbody>
-    </table>
+<div class="card">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">当日件数</div><div class="value">16</div></div>
+    <div class="kpi"><div class="label">前日比</div><div class="value neg">-4</div></div>
+    <div class="kpi"><div class="label">1週間後</div><div class="value">206</div></div>
+    <div class="kpi"><div class="label">30日後</div><div class="value">314</div></div>
+    <div class="kpi"><div class="label">60日後</div><div class="value">477</div></div>
+    <div class="kpi"><div class="label">90日後</div><div class="value">477</div></div>
+    <div class="kpi"><div class="label">180日後</div><div class="value">419</div></div>
+    <div class="kpi"><div class="label">最小</div><div class="value">16</div></div>
+    <div class="kpi"><div class="label">最大</div><div class="value">634</div></div>
+    <div class="kpi"><div class="label">平均</div><div class="value">469.4</div></div>
+    <div class="kpi"><div class="label">中央値</div><div class="value">495</div></div>
   </div>
 </div>
 
+<div class="card">
+  <h3>日別在庫数（当日 vs 前回取得）</h3>
+  <canvas id="dailyChart" height="120"></canvas>
+</div>
+
+<div class="card">
+  <h3>月別平均在庫数</h3>
+  <canvas id="monthlyChart" height="120"></canvas>
+</div>
+
 <script>
-const DATA = [{"date": "2026-04-18", "wday": "土", "isWeekend": true, "count": 20}, {"date": "2026-04-19", "wday": "日", "isWeekend": true, "count": 185}, {"date": "2026-04-20", "wday": "月", "isWeekend": false, "count": 249}, {"date": "2026-04-21", "wday": "火", "isWeekend": false, "count": 280}, {"date": "2026-04-22", "wday": "水", "isWeekend": false, "count": 320}, {"date": "2026-04-23", "wday": "木", "isWeekend": false, "count": 315}, {"date": "2026-04-24", "wday": "金", "isWeekend": false, "count": 286}, {"date": "2026-04-25", "wday": "土", "isWeekend": true, "count": 186}, {"date": "2026-04-26", "wday": "日", "isWeekend": true, "count": 315}, {"date": "2026-04-27", "wday": "月", "isWeekend": false, "count": 391}, {"date": "2026-04-28", "wday": "火", "isWeekend": false, "count": 430}, {"date": "2026-04-29", "wday": "水", "isWeekend": false, "count": 402}, {"date": "2026-04-30", "wday": "木", "isWeekend": false, "count": 376}, {"date": "2026-05-01", "wday": "金", "isWeekend": false, "count": 297}, {"date": "2026-05-02", "wday": "土", "isWeekend": true, "count": 175}, {"date": "2026-05-03", "wday": "日", "isWeekend": true, "count": 182}, {"date": "2026-05-04", "wday": "月", "isWeekend": false, "count": 244}, {"date": "2026-05-05", "wday": "火", "isWeekend": false, "count": 362}, {"date": "2026-05-06", "wday": "水", "isWeekend": false, "count": 454}, {"date": "2026-05-07", "wday": "木", "isWeekend": false, "count": 442}, {"date": "2026-05-08", "wday": "金", "isWeekend": false, "count": 395}, {"date": "2026-05-09", "wday": "土", "isWeekend": true, "count": 366}, {"date": "2026-05-10", "wday": "日", "isWeekend": true, "count": 412}, {"date": "2026-05-11", "wday": "月", "isWeekend": false, "count": 369}, {"date": "2026-05-12", "wday": "火", "isWeekend": false, "count": 354}, {"date": "2026-05-13", "wday": "水", "isWeekend": false, "count": 355}, {"date": "2026-05-14", "wday": "木", "isWeekend": false, "count": 295}, {"date": "2026-05-15", "wday": "金", "isWeekend": false, "count": 254}, {"date": "2026-05-16", "wday": "土", "isWeekend": true, "count": 199}, {"date": "2026-05-17", "wday": "日", "isWeekend": true, "count": 278}, {"date": "2026-05-18", "wday": "月", "isWeekend": false, "count": 308}, {"date": "2026-05-19", "wday": "火", "isWeekend": false, "count": 312}, {"date": "2026-05-20", "wday": "水", "isWeekend": false, "count": 302}, {"date": "2026-05-21", "wday": "木", "isWeekend": false, "count": 255}, {"date": "2026-05-22", "wday": "金", "isWeekend": false, "count": 204}, {"date": "2026-05-23", "wday": "土", "isWeekend": true, "count": 192}, {"date": "2026-05-24", "wday": "日", "isWeekend": true, "count": 264}, {"date": "2026-05-25", "wday": "月", "isWeekend": false, "count": 278}, {"date": "2026-05-26", "wday": "火", "isWeekend": false, "count": 295}, {"date": "2026-05-27", "wday": "水", "isWeekend": false, "count": 299}, {"date": "2026-05-28", "wday": "木", "isWeekend": false, "count": 270}, {"date": "2026-05-29", "wday": "金", "isWeekend": false, "count": 266}, {"date": "2026-05-30", "wday": "土", "isWeekend": true, "count": 264}, {"date": "2026-05-31", "wday": "日", "isWeekend": true, "count": 329}, {"date": "2026-06-01", "wday": "月", "isWeekend": false, "count": 361}, {"date": "2026-06-02", "wday": "火", "isWeekend": false, "count": 380}, {"date": "2026-06-03", "wday": "水", "isWeekend": false, "count": 388}, {"date": "2026-06-04", "wday": "木", "isWeekend": false, "count": 398}, {"date": "2026-06-05", "wday": "金", "isWeekend": false, "count": 389}, {"date": "2026-06-06", "wday": "土", "isWeekend": true, "count": 404}, {"date": "2026-06-07", "wday": "日", "isWeekend": true, "count": 452}, {"date": "2026-06-08", "wday": "月", "isWeekend": false, "count": 468}, {"date": "2026-06-09", "wday": "火", "isWeekend": false, "count": 484}, {"date": "2026-06-10", "wday": "水", "isWeekend": false, "count": 489}, {"date": "2026-06-11", "wday": "木", "isWeekend": false, "count": 492}, {"date": "2026-06-12", "wday": "金", "isWeekend": false, "count": 459}, {"date": "2026-06-13", "wday": "土", "isWeekend": true, "count": 438}, {"date": "2026-06-14", "wday": "日", "isWeekend": true, "count": 473}, {"date": "2026-06-15", "wday": "月", "isWeekend": false, "count": 474}, {"date": "2026-06-16", "wday": "火", "isWeekend": false, "count": 479}, {"date": "2026-06-17", "wday": "水", "isWeekend": false, "count": 474}, {"date": "2026-06-18", "wday": "木", "isWeekend": false, "count": 474}, {"date": "2026-06-19", "wday": "金", "isWeekend": false, "count": 449}, {"date": "2026-06-20", "wday": "土", "isWeekend": true, "count": 427}, {"date": "2026-06-21", "wday": "日", "isWeekend": true, "count": 481}, {"date": "2026-06-22", "wday": "月", "isWeekend": false, "count": 484}, {"date": "2026-06-23", "wday": "火", "isWeekend": false, "count": 493}, {"date": "2026-06-24", "wday": "水", "isWeekend": false, "count": 497}, {"date": "2026-06-25", "wday": "木", "isWeekend": false, "count": 469}, {"date": "2026-06-26", "wday": "金", "isWeekend": false, "count": 463}, {"date": "2026-06-27", "wday": "土", "isWeekend": true, "count": 452}, {"date": "2026-06-28", "wday": "日", "isWeekend": true, "count": 485}, {"date": "2026-06-29", "wday": "月", "isWeekend": false, "count": 483}, {"date": "2026-06-30", "wday": "火", "isWeekend": false, "count": 483}, {"date": "2026-07-01", "wday": "水", "isWeekend": false, "count": 472}, {"date": "2026-07-02", "wday": "木", "isWeekend": false, "count": 461}, {"date": "2026-07-03", "wday": "金", "isWeekend": false, "count": 444}, {"date": "2026-07-04", "wday": "土", "isWeekend": true, "count": 427}, {"date": "2026-07-05", "wday": "日", "isWeekend": true, "count": 463}, {"date": "2026-07-06", "wday": "月", "isWeekend": false, "count": 469}, {"date": "2026-07-07", "wday": "火", "isWeekend": false, "count": 485}, {"date": "2026-07-08", "wday": "水", "isWeekend": false, "count": 499}, {"date": "2026-07-09", "wday": "木", "isWeekend": false, "count": 479}, {"date": "2026-07-10", "wday": "金", "isWeekend": false, "count": 476}, {"date": "2026-07-11", "wday": "土", "isWeekend": true, "count": 448}, {"date": "2026-07-12", "wday": "日", "isWeekend": true, "count": 499}, {"date": "2026-07-13", "wday": "月", "isWeekend": false, "count": 508}, {"date": "2026-07-14", "wday": "火", "isWeekend": false, "count": 499}, {"date": "2026-07-15", "wday": "水", "isWeekend": false, "count": 501}, {"date": "2026-07-16", "wday": "木", "isWeekend": false, "count": 482}, {"date": "2026-07-17", "wday": "金", "isWeekend": false, "count": 470}, {"date": "2026-07-18", "wday": "土", "isWeekend": true, "count": 447}, {"date": "2026-07-19", "wday": "日", "isWeekend": true, "count": 479}, {"date": "2026-07-20", "wday": "月", "isWeekend": false, "count": 501}, {"date": "2026-07-21", "wday": "火", "isWeekend": false, "count": 499}, {"date": "2026-07-22", "wday": "水", "isWeekend": false, "count": 504}, {"date": "2026-07-23", "wday": "木", "isWeekend": false, "count": 506}, {"date": "2026-07-24", "wday": "金", "isWeekend": false, "count": 478}, {"date": "2026-07-25", "wday": "土", "isWeekend": true, "count": 452}, {"date": "2026-07-26", "wday": "日", "isWeekend": true, "count": 502}, {"date": "2026-07-27", "wday": "月", "isWeekend": false, "count": 514}, {"date": "2026-07-28", "wday": "火", "isWeekend": false, "count": 509}, {"date": "2026-07-29", "wday": "水", "isWeekend": false, "count": 538}, {"date": "2026-07-30", "wday": "木", "isWeekend": false, "count": 525}, {"date": "2026-07-31", "wday": "金", "isWeekend": false, "count": 524}, {"date": "2026-08-01", "wday": "土", "isWeekend": true, "count": 497}, {"date": "2026-08-02", "wday": "日", "isWeekend": true, "count": 526}, {"date": "2026-08-03", "wday": "月", "isWeekend": false, "count": 552}, {"date": "2026-08-04", "wday": "火", "isWeekend": false, "count": 551}, {"date": "2026-08-05", "wday": "水", "isWeekend": false, "count": 556}, {"date": "2026-08-06", "wday": "木", "isWeekend": false, "count": 555}, {"date": "2026-08-07", "wday": "金", "isWeekend": false, "count": 542}, {"date": "2026-08-08", "wday": "土", "isWeekend": true, "count": 528}, {"date": "2026-08-09", "wday": "日", "isWeekend": true, "count": 555}, {"date": "2026-08-10", "wday": "月", "isWeekend": false, "count": 563}, {"date": "2026-08-11", "wday": "火", "isWeekend": false, "count": 558}, {"date": "2026-08-12", "wday": "水", "isWeekend": false, "count": 561}, {"date": "2026-08-13", "wday": "木", "isWeekend": false, "count": 556}, {"date": "2026-08-14", "wday": "金", "isWeekend": false, "count": 558}, {"date": "2026-08-15", "wday": "土", "isWeekend": true, "count": 562}, {"date": "2026-08-16", "wday": "日", "isWeekend": true, "count": 583}, {"date": "2026-08-17", "wday": "月", "isWeekend": false, "count": 593}, {"date": "2026-08-18", "wday": "火", "isWeekend": false, "count": 600}, {"date": "2026-08-19", "wday": "水", "isWeekend": false, "count": 592}, {"date": "2026-08-20", "wday": "木", "isWeekend": false, "count": 586}, {"date": "2026-08-21", "wday": "金", "isWeekend": false, "count": 574}, {"date": "2026-08-22", "wday": "土", "isWeekend": true, "count": 573}, {"date": "2026-08-23", "wday": "日", "isWeekend": true, "count": 594}, {"date": "2026-08-24", "wday": "月", "isWeekend": false, "count": 600}, {"date": "2026-08-25", "wday": "火", "isWeekend": false, "count": 602}, {"date": "2026-08-26", "wday": "水", "isWeekend": false, "count": 607}, {"date": "2026-08-27", "wday": "木", "isWeekend": false, "count": 612}, {"date": "2026-08-28", "wday": "金", "isWeekend": false, "count": 598}, {"date": "2026-08-29", "wday": "土", "isWeekend": true, "count": 593}, {"date": "2026-08-30", "wday": "日", "isWeekend": true, "count": 626}, {"date": "2026-08-31", "wday": "月", "isWeekend": false, "count": 629}, {"date": "2026-09-01", "wday": "火", "isWeekend": false, "count": 610}, {"date": "2026-09-02", "wday": "水", "isWeekend": false, "count": 608}, {"date": "2026-09-03", "wday": "木", "isWeekend": false, "count": 603}, {"date": "2026-09-04", "wday": "金", "isWeekend": false, "count": 581}, {"date": "2026-09-05", "wday": "土", "isWeekend": true, "count": 573}, {"date": "2026-09-06", "wday": "日", "isWeekend": true, "count": 589}, {"date": "2026-09-07", "wday": "月", "isWeekend": false, "count": 590}, {"date": "2026-09-08", "wday": "火", "isWeekend": false, "count": 600}, {"date": "2026-09-09", "wday": "水", "isWeekend": false, "count": 607}, {"date": "2026-09-10", "wday": "木", "isWeekend": false, "count": 598}, {"date": "2026-09-11", "wday": "金", "isWeekend": false, "count": 589}, {"date": "2026-09-12", "wday": "土", "isWeekend": true, "count": 581}, {"date": "2026-09-13", "wday": "日", "isWeekend": true, "count": 609}, {"date": "2026-09-14", "wday": "月", "isWeekend": false, "count": 615}, {"date": "2026-09-15", "wday": "火", "isWeekend": false, "count": 605}, {"date": "2026-09-16", "wday": "水", "isWeekend": false, "count": 600}, {"date": "2026-09-17", "wday": "木", "isWeekend": false, "count": 588}, {"date": "2026-09-18", "wday": "金", "isWeekend": false, "count": 553}, {"date": "2026-09-19", "wday": "土", "isWeekend": true, "count": 524}, {"date": "2026-09-20", "wday": "日", "isWeekend": true, "count": 532}, {"date": "2026-09-21", "wday": "月", "isWeekend": false, "count": 547}, {"date": "2026-09-22", "wday": "火", "isWeekend": false, "count": 550}, {"date": "2026-09-23", "wday": "水", "isWeekend": false, "count": 560}, {"date": "2026-09-24", "wday": "木", "isWeekend": false, "count": 563}, {"date": "2026-09-25", "wday": "金", "isWeekend": false, "count": 553}, {"date": "2026-09-26", "wday": "土", "isWeekend": true, "count": 548}, {"date": "2026-09-27", "wday": "日", "isWeekend": true, "count": 574}, {"date": "2026-09-28", "wday": "月", "isWeekend": false, "count": 577}, {"date": "2026-09-29", "wday": "火", "isWeekend": false, "count": 583}, {"date": "2026-09-30", "wday": "水", "isWeekend": false, "count": 566}, {"date": "2026-10-01", "wday": "木", "isWeekend": false, "count": 538}, {"date": "2026-10-02", "wday": "金", "isWeekend": false, "count": 513}, {"date": "2026-10-03", "wday": "土", "isWeekend": true, "count": 488}, {"date": "2026-10-04", "wday": "日", "isWeekend": true, "count": 502}, {"date": "2026-10-05", "wday": "月", "isWeekend": false, "count": 513}, {"date": "2026-10-06", "wday": "火", "isWeekend": false, "count": 512}, {"date": "2026-10-07", "wday": "水", "isWeekend": false, "count": 507}, {"date": "2026-10-08", "wday": "木", "isWeekend": false, "count": 502}, {"date": "2026-10-09", "wday": "金", "isWeekend": false, "count": 500}, {"date": "2026-10-10", "wday": "土", "isWeekend": true, "count": 480}, {"date": "2026-10-11", "wday": "日", "isWeekend": true, "count": 498}, {"date": "2026-10-12", "wday": "月", "isWeekend": false, "count": 508}, {"date": "2026-10-13", "wday": "火", "isWeekend": false, "count": 517}, {"date": "2026-10-14", "wday": "水", "isWeekend": false, "count": 493}, {"date": "2026-10-15", "wday": "木", "isWeekend": false, "count": 406}, {"date": "2026-10-16", "wday": "金", "isWeekend": false, "count": 388}, {"date": "2026-10-17", "wday": "土", "isWeekend": true, "count": 366}];
+const labels = ["2026-04-18", "2026-04-19", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-24", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-05-31", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17"];
+const today = [16, 169, 249, 282, 328, 316, 296, 206, 316, 391, 437, 404, 379, 300, 171, 179, 242, 366, 462, 452, 401, 372, 418, 377, 362, 356, 295, 253, 198, 280, 314, 317, 304, 256, 208, 191, 264, 279, 297, 299, 268, 269, 266, 330, 368, 383, 389, 399, 391, 407, 456, 472, 489, 495, 495, 464, 441, 476, 476, 481, 477, 477, 450, 432, 482, 487, 500, 506, 473, 466, 458, 490, 488, 487, 479, 466, 452, 434, 470, 478, 490, 502, 486, 482, 453, 502, 513, 503, 499, 486, 477, 453, 483, 502, 499, 505, 510, 481, 453, 505, 519, 516, 543, 533, 529, 500, 527, 552, 552, 557, 556, 539, 529, 554, 563, 560, 562, 558, 557, 564, 585, 597, 605, 594, 594, 579, 579, 602, 609, 609, 613, 619, 605, 600, 629, 634, 616, 616, 608, 585, 580, 596, 596, 606, 612, 604, 595, 584, 615, 620, 610, 606, 593, 558, 526, 538, 553, 555, 565, 571, 560, 556, 579, 584, 590, 574, 543, 521, 496, 511, 519, 516, 513, 505, 503, 487, 505, 517, 525, 524, 419, 394, 375];
+const prev = [20, 185, 249, 280, 320, 315, 286, 186, 315, 391, 430, 402, 376, 297, 175, 182, 244, 362, 454, 442, 395, 366, 412, 369, 354, 355, 295, 254, 199, 278, 308, 312, 302, 255, 204, 192, 264, 278, 295, 299, 270, 266, 264, 329, 361, 380, 388, 398, 389, 404, 452, 468, 484, 489, 492, 459, 438, 473, 474, 479, 474, 474, 449, 427, 481, 484, 493, 497, 469, 463, 452, 485, 483, 483, 472, 461, 444, 427, 463, 469, 485, 499, 479, 476, 448, 499, 508, 499, 501, 482, 470, 447, 479, 501, 499, 504, 506, 478, 452, 502, 514, 509, 538, 525, 524, 497, 526, 552, 551, 556, 555, 542, 528, 555, 563, 558, 561, 556, 558, 562, 583, 593, 600, 592, 586, 574, 573, 594, 600, 602, 607, 612, 598, 593, 626, 629, 610, 608, 603, 581, 573, 589, 590, 600, 607, 598, 589, 581, 609, 615, 605, 600, 588, 553, 524, 532, 547, 550, 560, 563, 553, 548, 574, 577, 583, 566, 538, 513, 488, 502, 513, 512, 507, 502, 500, 480, 498, 508, 517, 493, 406, 388, 366];
+const mLabels = ["2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10"];
+const mValues = [291.5, 301.5, 458.5, 490.4, 576.9, 585.0, 492.5];
 
-// Stats
-const counts = DATA.map(d => d.count);
-const min = Math.min(...counts);
-const max = Math.max(...counts);
-const avg = counts.reduce((a,b)=>a+b,0) / counts.length;
-const sorted = [...counts].sort((a,b)=>a-b);
-const med = sorted.length%2 ? sorted[(sorted.length-1)/2] : (sorted[sorted.length/2-1]+sorted[sorted.length/2])/2;
-
-document.getElementById('minVal').textContent = min.toLocaleString() + '件';
-document.getElementById('maxVal').textContent = max.toLocaleString() + '件';
-document.getElementById('avgVal').textContent = Math.round(avg).toLocaleString() + '件';
-document.getElementById('medVal').textContent = med.toLocaleString() + '件';
-
-// Table
-const tbody = document.querySelector('#dataTable tbody');
-DATA.forEach(d => {
-  const tr = document.createElement('tr');
-  if (d.isWeekend) tr.classList.add('weekend');
-  tr.innerHTML = `<td>${d.date}</td><td>${d.wday}</td><td>${d.count.toLocaleString()}</td>`;
-  tbody.appendChild(tr);
-});
-
-// 7-day moving average
-const ma7 = counts.map((_, i) => {
-  if (i < 3 || i > counts.length - 4) return null;
-  let sum = 0; for (let j = i-3; j <= i+3; j++) sum += counts[j];
-  return Math.round(sum / 7);
-});
-
-// Main chart
-const ctx = document.getElementById('chart').getContext('2d');
-const labels = DATA.map(d => d.date);
-const pointColors = DATA.map(d => d.isWeekend ? '#FFA500' : '#FF5A5F');
-
-const rawDs = {
-  label: '件数',
-  data: counts,
-  borderColor: '#FF5A5F',
-  backgroundColor: 'rgba(255,90,95,0.08)',
-  borderWidth: 1.5,
-  pointRadius: 2.5,
-  pointBackgroundColor: pointColors,
-  tension: 0.15,
-  fill: true,
-};
-const maDs = {
-  label: '7日移動平均',
-  data: ma7,
-  borderColor: '#484848',
-  backgroundColor: 'transparent',
-  borderWidth: 2.5,
-  pointRadius: 0,
-  tension: 0.25,
-  fill: false,
-  borderDash: [],
-};
-
-const mainChart = new Chart(ctx, {
+new Chart(document.getElementById('dailyChart'), {
   type: 'line',
-  data: { labels, datasets: [rawDs] },
+  data: {
+    labels: labels,
+    datasets: [
+      { label: '当日取得 (2026-04-18)', data: today, borderColor: '#1f77b4', backgroundColor: 'rgba(31,119,180,0.08)', tension: 0.25, borderWidth: 2, pointRadius: 0 },
+      { label: '前回取得', data: prev, borderColor: '#c0c0c0', borderDash: [4,4], tension: 0.25, borderWidth: 1.5, pointRadius: 0 }
+    ]
+  },
   options: {
-    responsive: true, maintainAspectRatio: false,
-    interaction: { intersect: false, mode: 'index' },
-    scales: {
-      x: { ticks: { maxTicksLimit: 18, autoSkip: true }, grid: { color: 'rgba(0,0,0,0.04)' } },
-      y: { beginAtZero: true, title: { display: true, text: '件数' }, grid: { color: 'rgba(0,0,0,0.06)' } }
-    },
-    plugins: {
-      legend: { display: true, position: 'top' },
-      tooltip: {
-        callbacks: {
-          label: function(ctx) {
-            const d = DATA[ctx.dataIndex];
-            return ctx.dataset.label + ': ' + (ctx.parsed.y !== null ? ctx.parsed.y.toLocaleString() : '-') + ' 件';
-          },
-          afterLabel: function(ctx) {
-            const d = DATA[ctx.dataIndex];
-            return '(' + d.wday + ')';
-          }
-        }
-      }
-    }
+    responsive: true,
+    interaction: { mode: 'index', intersect: false },
+    scales: { y: { beginAtZero: true } }
   }
 });
 
-// View controls
-document.querySelectorAll('.controls button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const v = btn.dataset.v;
-    if (v === 'raw') mainChart.data.datasets = [rawDs];
-    else if (v === 'ma7') mainChart.data.datasets = [maDs];
-    else mainChart.data.datasets = [rawDs, maDs];
-    mainChart.update();
-  });
-});
-
-// Monthly averages
-const monthly = {};
-DATA.forEach(d => {
-  const mo = d.date.slice(0,7);
-  if (!monthly[mo]) monthly[mo] = [];
-  monthly[mo].push(d.count);
-});
-const moLabels = Object.keys(monthly).sort();
-const moAvg = moLabels.map(m => Math.round(monthly[m].reduce((a,b)=>a+b,0)/monthly[m].length));
-
-new Chart(document.getElementById('monthChart').getContext('2d'), {
+new Chart(document.getElementById('monthlyChart'), {
   type: 'bar',
-  data: { labels: moLabels, datasets: [{ label: '月平均件数', data: moAvg, backgroundColor: '#FF5A5F' }] },
+  data: {
+    labels: mLabels,
+    datasets: [{ label: '月別平均在庫数', data: mValues, backgroundColor: '#2ca02c' }]
+  },
   options: {
-    responsive: true, maintainAspectRatio: false,
-    scales: { y: { beginAtZero: true } },
-    plugins: { legend: { display: false } }
-  }
-});
-
-// Weekday averages
-const wd = {'月':[],'火':[],'水':[],'木':[],'金':[],'土':[],'日':[]};
-DATA.forEach(d => wd[d.wday].push(d.count));
-const wdLabels = ['月','火','水','木','金','土','日'];
-const wdAvg = wdLabels.map(w => Math.round(wd[w].reduce((a,b)=>a+b,0)/wd[w].length));
-const wdColors = wdLabels.map(w => (w === '土' || w === '日') ? '#FFA500' : '#FF5A5F');
-
-new Chart(document.getElementById('wdayChart').getContext('2d'), {
-  type: 'bar',
-  data: { labels: wdLabels, datasets: [{ label: '曜日別平均', data: wdAvg, backgroundColor: wdColors }] },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    scales: { y: { beginAtZero: true } },
-    plugins: { legend: { display: false } }
+    scales: { y: { beginAtZero: true } }
   }
 });
 </script>
