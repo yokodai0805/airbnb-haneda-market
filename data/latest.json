@@ -1,1872 +1,1110 @@
 {
-  "meta": {
-    "location": "羽田空港 (Hanedakuko)",
-    "filters": {
-      "room_type": "Entire home/apt (まるまる貸切)",
-      "guest_favorite": true,
-      "adults": 5,
-      "nights": 1
-    },
-    "period_start": "2026-04-18",
-    "period_end": "2026-10-17",
-    "total_days": 183,
-    "generated_at": "2026-04-18"
-  },
-  "daily": [
-    {
-      "date": "2026-04-18",
-      "count": 16
-    },
+  "fetched_at": "2026-04-19",
+  "count": 184,
+  "data": [
     {
       "date": "2026-04-19",
-      "count": 169
+      "count": 109,
+      "plus": false,
+      "title": "Hanedakukoにある109件の宿泊先"
     },
     {
       "date": "2026-04-20",
-      "count": 249
+      "count": 228,
+      "plus": false,
+      "title": "Hanedakukoにある228件の宿泊先"
     },
     {
       "date": "2026-04-21",
-      "count": 282
+      "count": 271,
+      "plus": false,
+      "title": "Hanedakukoにある271件の宿泊先"
     },
     {
       "date": "2026-04-22",
-      "count": 328
+      "count": 310,
+      "plus": false,
+      "title": "Hanedakukoにある310件の宿泊先"
     },
     {
       "date": "2026-04-23",
-      "count": 316
-    },
-    {
-      "date": "2026-04-24",
-      "count": 296
-    },
-    {
-      "date": "2026-04-25",
-      "count": 206
-    },
-    {
-      "date": "2026-04-26",
-      "count": 316
-    },
-    {
-      "date": "2026-04-27",
-      "count": 391
-    },
-    {
-      "date": "2026-04-28",
-      "count": 437
-    },
-    {
-      "date": "2026-04-29",
-      "count": 404
-    },
-    {
-      "date": "2026-04-30",
-      "count": 379
-    },
-    {
-      "date": "2026-05-01",
-      "count": 300
-    },
-    {
-      "date": "2026-05-02",
-      "count": 171
-    },
-    {
-      "date": "2026-05-03",
-      "count": 179
-    },
-    {
-      "date": "2026-05-04",
-      "count": 242
-    },
-    {
-      "date": "2026-05-05",
-      "count": 366
-    },
-    {
-      "date": "2026-05-06",
-      "count": 462
-    },
-    {
-      "date": "2026-05-07",
-      "count": 452
-    },
-    {
-      "date": "2026-05-08",
-      "count": 401
-    },
-    {
-      "date": "2026-05-09",
-      "count": 372
-    },
-    {
-      "date": "2026-05-10",
-      "count": 418
-    },
-    {
-      "date": "2026-05-11",
-      "count": 377
-    },
-    {
-      "date": "2026-05-12",
-      "count": 362
-    },
-    {
-      "date": "2026-05-13",
-      "count": 356
-    },
-    {
-      "date": "2026-05-14",
-      "count": 295
-    },
-    {
-      "date": "2026-05-15",
-      "count": 253
-    },
-    {
-      "date": "2026-05-16",
-      "count": 198
-    },
-    {
-      "date": "2026-05-17",
-      "count": 280
-    },
-    {
-      "date": "2026-05-18",
-      "count": 314
-    },
-    {
-      "date": "2026-05-19",
-      "count": 317
-    },
-    {
-      "date": "2026-05-20",
-      "count": 304
-    },
-    {
-      "date": "2026-05-21",
-      "count": 256
-    },
-    {
-      "date": "2026-05-22",
-      "count": 208
-    },
-    {
-      "date": "2026-05-23",
-      "count": 191
-    },
-    {
-      "date": "2026-05-24",
-      "count": 264
-    },
-    {
-      "date": "2026-05-25",
-      "count": 279
-    },
-    {
-      "date": "2026-05-26",
-      "count": 297
-    },
-    {
-      "date": "2026-05-27",
-      "count": 299
-    },
-    {
-      "date": "2026-05-28",
-      "count": 268
-    },
-    {
-      "date": "2026-05-29",
-      "count": 269
-    },
-    {
-      "date": "2026-05-30",
-      "count": 266
-    },
-    {
-      "date": "2026-05-31",
-      "count": 330
-    },
-    {
-      "date": "2026-06-01",
-      "count": 368
-    },
-    {
-      "date": "2026-06-02",
-      "count": 383
-    },
-    {
-      "date": "2026-06-03",
-      "count": 389
-    },
-    {
-      "date": "2026-06-04",
-      "count": 399
-    },
-    {
-      "date": "2026-06-05",
-      "count": 391
-    },
-    {
-      "date": "2026-06-06",
-      "count": 407
-    },
-    {
-      "date": "2026-06-07",
-      "count": 456
-    },
-    {
-      "date": "2026-06-08",
-      "count": 472
-    },
-    {
-      "date": "2026-06-09",
-      "count": 489
-    },
-    {
-      "date": "2026-06-10",
-      "count": 495
-    },
-    {
-      "date": "2026-06-11",
-      "count": 495
-    },
-    {
-      "date": "2026-06-12",
-      "count": 464
-    },
-    {
-      "date": "2026-06-13",
-      "count": 441
-    },
-    {
-      "date": "2026-06-14",
-      "count": 476
-    },
-    {
-      "date": "2026-06-15",
-      "count": 476
-    },
-    {
-      "date": "2026-06-16",
-      "count": 481
-    },
-    {
-      "date": "2026-06-17",
-      "count": 477
-    },
-    {
-      "date": "2026-06-18",
-      "count": 477
-    },
-    {
-      "date": "2026-06-19",
-      "count": 450
-    },
-    {
-      "date": "2026-06-20",
-      "count": 432
-    },
-    {
-      "date": "2026-06-21",
-      "count": 482
-    },
-    {
-      "date": "2026-06-22",
-      "count": 487
-    },
-    {
-      "date": "2026-06-23",
-      "count": 500
-    },
-    {
-      "date": "2026-06-24",
-      "count": 506
-    },
-    {
-      "date": "2026-06-25",
-      "count": 473
-    },
-    {
-      "date": "2026-06-26",
-      "count": 466
-    },
-    {
-      "date": "2026-06-27",
-      "count": 458
-    },
-    {
-      "date": "2026-06-28",
-      "count": 490
-    },
-    {
-      "date": "2026-06-29",
-      "count": 488
-    },
-    {
-      "date": "2026-06-30",
-      "count": 487
-    },
-    {
-      "date": "2026-07-01",
-      "count": 479
-    },
-    {
-      "date": "2026-07-02",
-      "count": 466
-    },
-    {
-      "date": "2026-07-03",
-      "count": 452
-    },
-    {
-      "date": "2026-07-04",
-      "count": 434
-    },
-    {
-      "date": "2026-07-05",
-      "count": 470
-    },
-    {
-      "date": "2026-07-06",
-      "count": 478
-    },
-    {
-      "date": "2026-07-07",
-      "count": 490
-    },
-    {
-      "date": "2026-07-08",
-      "count": 502
-    },
-    {
-      "date": "2026-07-09",
-      "count": 486
-    },
-    {
-      "date": "2026-07-10",
-      "count": 482
-    },
-    {
-      "date": "2026-07-11",
-      "count": 453
-    },
-    {
-      "date": "2026-07-12",
-      "count": 502
-    },
-    {
-      "date": "2026-07-13",
-      "count": 513
-    },
-    {
-      "date": "2026-07-14",
-      "count": 503
-    },
-    {
-      "date": "2026-07-15",
-      "count": 499
-    },
-    {
-      "date": "2026-07-16",
-      "count": 486
-    },
-    {
-      "date": "2026-07-17",
-      "count": 477
-    },
-    {
-      "date": "2026-07-18",
-      "count": 453
-    },
-    {
-      "date": "2026-07-19",
-      "count": 483
-    },
-    {
-      "date": "2026-07-20",
-      "count": 502
-    },
-    {
-      "date": "2026-07-21",
-      "count": 499
-    },
-    {
-      "date": "2026-07-22",
-      "count": 505
-    },
-    {
-      "date": "2026-07-23",
-      "count": 510
-    },
-    {
-      "date": "2026-07-24",
-      "count": 481
-    },
-    {
-      "date": "2026-07-25",
-      "count": 453
-    },
-    {
-      "date": "2026-07-26",
-      "count": 505
-    },
-    {
-      "date": "2026-07-27",
-      "count": 519
-    },
-    {
-      "date": "2026-07-28",
-      "count": 516
-    },
-    {
-      "date": "2026-07-29",
-      "count": 543
-    },
-    {
-      "date": "2026-07-30",
-      "count": 533
-    },
-    {
-      "date": "2026-07-31",
-      "count": 529
-    },
-    {
-      "date": "2026-08-01",
-      "count": 500
-    },
-    {
-      "date": "2026-08-02",
-      "count": 527
-    },
-    {
-      "date": "2026-08-03",
-      "count": 552
-    },
-    {
-      "date": "2026-08-04",
-      "count": 552
-    },
-    {
-      "date": "2026-08-05",
-      "count": 557
-    },
-    {
-      "date": "2026-08-06",
-      "count": 556
-    },
-    {
-      "date": "2026-08-07",
-      "count": 539
-    },
-    {
-      "date": "2026-08-08",
-      "count": 529
-    },
-    {
-      "date": "2026-08-09",
-      "count": 554
-    },
-    {
-      "date": "2026-08-10",
-      "count": 563
-    },
-    {
-      "date": "2026-08-11",
-      "count": 560
-    },
-    {
-      "date": "2026-08-12",
-      "count": 562
-    },
-    {
-      "date": "2026-08-13",
-      "count": 558
-    },
-    {
-      "date": "2026-08-14",
-      "count": 557
-    },
-    {
-      "date": "2026-08-15",
-      "count": 564
-    },
-    {
-      "date": "2026-08-16",
-      "count": 585
-    },
-    {
-      "date": "2026-08-17",
-      "count": 597
-    },
-    {
-      "date": "2026-08-18",
-      "count": 605
-    },
-    {
-      "date": "2026-08-19",
-      "count": 594
-    },
-    {
-      "date": "2026-08-20",
-      "count": 594
-    },
-    {
-      "date": "2026-08-21",
-      "count": 579
-    },
-    {
-      "date": "2026-08-22",
-      "count": 579
-    },
-    {
-      "date": "2026-08-23",
-      "count": 602
-    },
-    {
-      "date": "2026-08-24",
-      "count": 609
-    },
-    {
-      "date": "2026-08-25",
-      "count": 609
-    },
-    {
-      "date": "2026-08-26",
-      "count": 613
-    },
-    {
-      "date": "2026-08-27",
-      "count": 619
-    },
-    {
-      "date": "2026-08-28",
-      "count": 605
-    },
-    {
-      "date": "2026-08-29",
-      "count": 600
-    },
-    {
-      "date": "2026-08-30",
-      "count": 629
-    },
-    {
-      "date": "2026-08-31",
-      "count": 634
-    },
-    {
-      "date": "2026-09-01",
-      "count": 616
-    },
-    {
-      "date": "2026-09-02",
-      "count": 616
-    },
-    {
-      "date": "2026-09-03",
-      "count": 608
-    },
-    {
-      "date": "2026-09-04",
-      "count": 585
-    },
-    {
-      "date": "2026-09-05",
-      "count": 580
-    },
-    {
-      "date": "2026-09-06",
-      "count": 596
-    },
-    {
-      "date": "2026-09-07",
-      "count": 596
-    },
-    {
-      "date": "2026-09-08",
-      "count": 606
-    },
-    {
-      "date": "2026-09-09",
-      "count": 612
-    },
-    {
-      "date": "2026-09-10",
-      "count": 604
-    },
-    {
-      "date": "2026-09-11",
-      "count": 595
-    },
-    {
-      "date": "2026-09-12",
-      "count": 584
-    },
-    {
-      "date": "2026-09-13",
-      "count": 615
-    },
-    {
-      "date": "2026-09-14",
-      "count": 620
-    },
-    {
-      "date": "2026-09-15",
-      "count": 610
-    },
-    {
-      "date": "2026-09-16",
-      "count": 606
-    },
-    {
-      "date": "2026-09-17",
-      "count": 593
-    },
-    {
-      "date": "2026-09-18",
-      "count": 558
-    },
-    {
-      "date": "2026-09-19",
-      "count": 526
-    },
-    {
-      "date": "2026-09-20",
-      "count": 538
-    },
-    {
-      "date": "2026-09-21",
-      "count": 553
-    },
-    {
-      "date": "2026-09-22",
-      "count": 555
-    },
-    {
-      "date": "2026-09-23",
-      "count": 565
-    },
-    {
-      "date": "2026-09-24",
-      "count": 571
-    },
-    {
-      "date": "2026-09-25",
-      "count": 560
-    },
-    {
-      "date": "2026-09-26",
-      "count": 556
-    },
-    {
-      "date": "2026-09-27",
-      "count": 579
-    },
-    {
-      "date": "2026-09-28",
-      "count": 584
-    },
-    {
-      "date": "2026-09-29",
-      "count": 590
-    },
-    {
-      "date": "2026-09-30",
-      "count": 574
-    },
-    {
-      "date": "2026-10-01",
-      "count": 543
-    },
-    {
-      "date": "2026-10-02",
-      "count": 521
-    },
-    {
-      "date": "2026-10-03",
-      "count": 496
-    },
-    {
-      "date": "2026-10-04",
-      "count": 511
-    },
-    {
-      "date": "2026-10-05",
-      "count": 519
-    },
-    {
-      "date": "2026-10-06",
-      "count": 516
-    },
-    {
-      "date": "2026-10-07",
-      "count": 513
-    },
-    {
-      "date": "2026-10-08",
-      "count": 505
-    },
-    {
-      "date": "2026-10-09",
-      "count": 503
-    },
-    {
-      "date": "2026-10-10",
-      "count": 487
-    },
-    {
-      "date": "2026-10-11",
-      "count": 505
-    },
-    {
-      "date": "2026-10-12",
-      "count": 517
-    },
-    {
-      "date": "2026-10-13",
-      "count": 525
-    },
-    {
-      "date": "2026-10-14",
-      "count": 524
-    },
-    {
-      "date": "2026-10-15",
-      "count": 419
-    },
-    {
-      "date": "2026-10-16",
-      "count": 394
-    },
-    {
-      "date": "2026-10-17",
-      "count": 375
-    }
-  ],
-  "summary": {
-    "today_count": 16,
-    "prev_today_count": 20,
-    "day_over_day_diff": -4,
-    "week_ahead": 206,
-    "day30": 314,
-    "day60": 477,
-    "day90": 477,
-    "day180": 419,
-    "min": 16,
-    "max": 634,
-    "avg": 469.4,
-    "median": 495,
-    "monthly_avg": {
-      "2026-04": 291.5,
-      "2026-05": 301.5,
-      "2026-06": 458.5,
-      "2026-07": 490.4,
-      "2026-08": 576.9,
-      "2026-09": 585.0,
-      "2026-10": 492.5
-    }
-  },
-  "daily_with_diff": [
-    {
-      "date": "2026-04-18",
-      "count": 16,
-      "prev": 20,
-      "diff": -4
-    },
-    {
-      "date": "2026-04-19",
-      "count": 169,
-      "prev": 185,
-      "diff": -16
-    },
-    {
-      "date": "2026-04-20",
-      "count": 249,
-      "prev": 249,
-      "diff": 0
-    },
-    {
-      "date": "2026-04-21",
-      "count": 282,
-      "prev": 280,
-      "diff": 2
-    },
-    {
-      "date": "2026-04-22",
-      "count": 328,
-      "prev": 320,
-      "diff": 8
-    },
-    {
-      "date": "2026-04-23",
-      "count": 316,
-      "prev": 315,
-      "diff": 1
-    },
-    {
-      "date": "2026-04-24",
-      "count": 296,
-      "prev": 286,
-      "diff": 10
-    },
-    {
-      "date": "2026-04-25",
-      "count": 206,
-      "prev": 186,
-      "diff": 20
-    },
-    {
-      "date": "2026-04-26",
-      "count": 316,
-      "prev": 315,
-      "diff": 1
-    },
-    {
-      "date": "2026-04-27",
-      "count": 391,
-      "prev": 391,
-      "diff": 0
-    },
-    {
-      "date": "2026-04-28",
-      "count": 437,
-      "prev": 430,
-      "diff": 7
-    },
-    {
-      "date": "2026-04-29",
-      "count": 404,
-      "prev": 402,
-      "diff": 2
-    },
-    {
-      "date": "2026-04-30",
-      "count": 379,
-      "prev": 376,
-      "diff": 3
-    },
-    {
-      "date": "2026-05-01",
-      "count": 300,
-      "prev": 297,
-      "diff": 3
-    },
-    {
-      "date": "2026-05-02",
-      "count": 171,
-      "prev": 175,
-      "diff": -4
-    },
-    {
-      "date": "2026-05-03",
-      "count": 179,
-      "prev": 182,
-      "diff": -3
-    },
-    {
-      "date": "2026-05-04",
-      "count": 242,
-      "prev": 244,
-      "diff": -2
-    },
-    {
-      "date": "2026-05-05",
-      "count": 366,
-      "prev": 362,
-      "diff": 4
-    },
-    {
-      "date": "2026-05-06",
-      "count": 462,
-      "prev": 454,
-      "diff": 8
-    },
-    {
-      "date": "2026-05-07",
-      "count": 452,
-      "prev": 442,
-      "diff": 10
-    },
-    {
-      "date": "2026-05-08",
-      "count": 401,
-      "prev": 395,
-      "diff": 6
-    },
-    {
-      "date": "2026-05-09",
-      "count": 372,
-      "prev": 366,
-      "diff": 6
-    },
-    {
-      "date": "2026-05-10",
-      "count": 418,
-      "prev": 412,
-      "diff": 6
-    },
-    {
-      "date": "2026-05-11",
-      "count": 377,
-      "prev": 369,
-      "diff": 8
-    },
-    {
-      "date": "2026-05-12",
-      "count": 362,
-      "prev": 354,
-      "diff": 8
-    },
-    {
-      "date": "2026-05-13",
-      "count": 356,
-      "prev": 355,
-      "diff": 1
-    },
-    {
-      "date": "2026-05-14",
-      "count": 295,
-      "prev": 295,
-      "diff": 0
-    },
-    {
-      "date": "2026-05-15",
-      "count": 253,
-      "prev": 254,
-      "diff": -1
-    },
-    {
-      "date": "2026-05-16",
-      "count": 198,
-      "prev": 199,
-      "diff": -1
-    },
-    {
-      "date": "2026-05-17",
-      "count": 280,
-      "prev": 278,
-      "diff": 2
-    },
-    {
-      "date": "2026-05-18",
-      "count": 314,
-      "prev": 308,
-      "diff": 6
-    },
-    {
-      "date": "2026-05-19",
-      "count": 317,
-      "prev": 312,
-      "diff": 5
-    },
-    {
-      "date": "2026-05-20",
-      "count": 304,
-      "prev": 302,
-      "diff": 2
-    },
-    {
-      "date": "2026-05-21",
-      "count": 256,
-      "prev": 255,
-      "diff": 1
-    },
-    {
-      "date": "2026-05-22",
-      "count": 208,
-      "prev": 204,
-      "diff": 4
-    },
-    {
-      "date": "2026-05-23",
-      "count": 191,
-      "prev": 192,
-      "diff": -1
-    },
-    {
-      "date": "2026-05-24",
-      "count": 264,
-      "prev": 264,
-      "diff": 0
-    },
-    {
-      "date": "2026-05-25",
-      "count": 279,
-      "prev": 278,
-      "diff": 1
-    },
-    {
-      "date": "2026-05-26",
-      "count": 297,
-      "prev": 295,
-      "diff": 2
-    },
-    {
-      "date": "2026-05-27",
       "count": 299,
-      "prev": 299,
-      "diff": 0
+      "plus": false,
+      "title": "Hanedakukoにある299件の宿泊先"
+    },
+    {
+      "date": "2026-04-24",
+      "count": 277,
+      "plus": false,
+      "title": "Hanedakukoにある277件の宿泊先"
+    },
+    {
+      "date": "2026-04-25",
+      "count": 191,
+      "plus": false,
+      "title": "Hanedakukoにある191件の宿泊先"
+    },
+    {
+      "date": "2026-04-26",
+      "count": 324,
+      "plus": false,
+      "title": "Hanedakukoにある324件の宿泊先"
+    },
+    {
+      "date": "2026-04-27",
+      "count": 383,
+      "plus": false,
+      "title": "Hanedakukoにある383件の宿泊先"
+    },
+    {
+      "date": "2026-04-28",
+      "count": 434,
+      "plus": false,
+      "title": "Hanedakukoにある434件の宿泊先"
+    },
+    {
+      "date": "2026-04-29",
+      "count": 397,
+      "plus": false,
+      "title": "Hanedakukoにある397件の宿泊先"
+    },
+    {
+      "date": "2026-04-30",
+      "count": 372,
+      "plus": false,
+      "title": "Hanedakukoにある372件の宿泊先"
+    },
+    {
+      "date": "2026-05-01",
+      "count": 284,
+      "plus": false,
+      "title": "Hanedakukoにある284件の宿泊先"
+    },
+    {
+      "date": "2026-05-02",
+      "count": 169,
+      "plus": false,
+      "title": "Hanedakukoにある169件の宿泊先"
+    },
+    {
+      "date": "2026-05-03",
+      "count": 173,
+      "plus": false,
+      "title": "Hanedakukoにある173件の宿泊先"
+    },
+    {
+      "date": "2026-05-04",
+      "count": 234,
+      "plus": false,
+      "title": "Hanedakukoにある234件の宿泊先"
+    },
+    {
+      "date": "2026-05-05",
+      "count": 357,
+      "plus": false,
+      "title": "Hanedakukoにある357件の宿泊先"
+    },
+    {
+      "date": "2026-05-06",
+      "count": 451,
+      "plus": false,
+      "title": "Hanedakukoにある451件の宿泊先"
+    },
+    {
+      "date": "2026-05-07",
+      "count": 442,
+      "plus": false,
+      "title": "Hanedakukoにある442件の宿泊先"
+    },
+    {
+      "date": "2026-05-08",
+      "count": 393,
+      "plus": false,
+      "title": "Hanedakukoにある393件の宿泊先"
+    },
+    {
+      "date": "2026-05-09",
+      "count": 366,
+      "plus": false,
+      "title": "Hanedakukoにある366件の宿泊先"
+    },
+    {
+      "date": "2026-05-10",
+      "count": 415,
+      "plus": false,
+      "title": "Hanedakukoにある415件の宿泊先"
+    },
+    {
+      "date": "2026-05-11",
+      "count": 368,
+      "plus": false,
+      "title": "Hanedakukoにある368件の宿泊先"
+    },
+    {
+      "date": "2026-05-12",
+      "count": 352,
+      "plus": false,
+      "title": "Hanedakukoにある352件の宿泊先"
+    },
+    {
+      "date": "2026-05-13",
+      "count": 346,
+      "plus": false,
+      "title": "Hanedakukoにある346件の宿泊先"
+    },
+    {
+      "date": "2026-05-14",
+      "count": 280,
+      "plus": false,
+      "title": "Hanedakukoにある280件の宿泊先"
+    },
+    {
+      "date": "2026-05-15",
+      "count": 239,
+      "plus": false,
+      "title": "Hanedakukoにある239件の宿泊先"
+    },
+    {
+      "date": "2026-05-16",
+      "count": 186,
+      "plus": false,
+      "title": "Hanedakukoにある186件の宿泊先"
+    },
+    {
+      "date": "2026-05-17",
+      "count": 271,
+      "plus": false,
+      "title": "Hanedakukoにある271件の宿泊先"
+    },
+    {
+      "date": "2026-05-18",
+      "count": 310,
+      "plus": false,
+      "title": "Hanedakukoにある310件の宿泊先"
+    },
+    {
+      "date": "2026-05-19",
+      "count": 318,
+      "plus": false,
+      "title": "Hanedakukoにある318件の宿泊先"
+    },
+    {
+      "date": "2026-05-20",
+      "count": 296,
+      "plus": false,
+      "title": "Hanedakukoにある296件の宿泊先"
+    },
+    {
+      "date": "2026-05-21",
+      "count": 249,
+      "plus": false,
+      "title": "Hanedakukoにある249件の宿泊先"
+    },
+    {
+      "date": "2026-05-22",
+      "count": 197,
+      "plus": false,
+      "title": "Hanedakukoにある197件の宿泊先"
+    },
+    {
+      "date": "2026-05-23",
+      "count": 184,
+      "plus": false,
+      "title": "Hanedakukoにある184件の宿泊先"
+    },
+    {
+      "date": "2026-05-24",
+      "count": 252,
+      "plus": false,
+      "title": "Hanedakukoにある252件の宿泊先"
+    },
+    {
+      "date": "2026-05-25",
+      "count": 270,
+      "plus": false,
+      "title": "Hanedakukoにある270件の宿泊先"
+    },
+    {
+      "date": "2026-05-26",
+      "count": 287,
+      "plus": false,
+      "title": "Hanedakukoにある287件の宿泊先"
+    },
+    {
+      "date": "2026-05-27",
+      "count": 292,
+      "plus": false,
+      "title": "Hanedakukoにある292件の宿泊先"
     },
     {
       "date": "2026-05-28",
-      "count": 268,
-      "prev": 270,
-      "diff": -2
+      "count": 262,
+      "plus": false,
+      "title": "Hanedakukoにある262件の宿泊先"
     },
     {
       "date": "2026-05-29",
-      "count": 269,
-      "prev": 266,
-      "diff": 3
+      "count": 260,
+      "plus": false,
+      "title": "Hanedakukoにある260件の宿泊先"
     },
     {
       "date": "2026-05-30",
-      "count": 266,
-      "prev": 264,
-      "diff": 2
+      "count": 251,
+      "plus": false,
+      "title": "Hanedakukoにある251件の宿泊先"
     },
     {
       "date": "2026-05-31",
-      "count": 330,
-      "prev": 329,
-      "diff": 1
+      "count": 318,
+      "plus": false,
+      "title": "Hanedakukoにある318件の宿泊先"
     },
     {
       "date": "2026-06-01",
-      "count": 368,
-      "prev": 361,
-      "diff": 7
+      "count": 356,
+      "plus": false,
+      "title": "Hanedakukoにある356件の宿泊先"
     },
     {
       "date": "2026-06-02",
-      "count": 383,
-      "prev": 380,
-      "diff": 3
+      "count": 373,
+      "plus": false,
+      "title": "Hanedakukoにある373件の宿泊先"
     },
     {
       "date": "2026-06-03",
-      "count": 389,
-      "prev": 388,
-      "diff": 1
+      "count": 380,
+      "plus": false,
+      "title": "Hanedakukoにある380件の宿泊先"
     },
     {
       "date": "2026-06-04",
-      "count": 399,
-      "prev": 398,
-      "diff": 1
+      "count": 392,
+      "plus": false,
+      "title": "Hanedakukoにある392件の宿泊先"
     },
     {
       "date": "2026-06-05",
-      "count": 391,
-      "prev": 389,
-      "diff": 2
+      "count": 380,
+      "plus": false,
+      "title": "Hanedakukoにある380件の宿泊先"
     },
     {
       "date": "2026-06-06",
-      "count": 407,
-      "prev": 404,
-      "diff": 3
+      "count": 393,
+      "plus": false,
+      "title": "Hanedakukoにある393件の宿泊先"
     },
     {
       "date": "2026-06-07",
-      "count": 456,
-      "prev": 452,
-      "diff": 4
+      "count": 447,
+      "plus": false,
+      "title": "Hanedakukoにある447件の宿泊先"
     },
     {
       "date": "2026-06-08",
-      "count": 472,
-      "prev": 468,
-      "diff": 4
+      "count": 462,
+      "plus": false,
+      "title": "Hanedakukoにある462件の宿泊先"
     },
     {
       "date": "2026-06-09",
-      "count": 489,
-      "prev": 484,
-      "diff": 5
+      "count": 480,
+      "plus": false,
+      "title": "Hanedakukoにある480件の宿泊先"
     },
     {
       "date": "2026-06-10",
-      "count": 495,
-      "prev": 489,
-      "diff": 6
+      "count": 486,
+      "plus": false,
+      "title": "Hanedakukoにある486件の宿泊先"
     },
     {
       "date": "2026-06-11",
-      "count": 495,
-      "prev": 492,
-      "diff": 3
+      "count": 486,
+      "plus": false,
+      "title": "Hanedakukoにある486件の宿泊先"
     },
     {
       "date": "2026-06-12",
-      "count": 464,
-      "prev": 459,
-      "diff": 5
+      "count": 459,
+      "plus": false,
+      "title": "Hanedakukoにある459件の宿泊先"
     },
     {
       "date": "2026-06-13",
-      "count": 441,
-      "prev": 438,
-      "diff": 3
+      "count": 434,
+      "plus": false,
+      "title": "Hanedakukoにある434件の宿泊先"
     },
     {
       "date": "2026-06-14",
-      "count": 476,
-      "prev": 473,
-      "diff": 3
+      "count": 470,
+      "plus": false,
+      "title": "Hanedakukoにある470件の宿泊先"
     },
     {
       "date": "2026-06-15",
-      "count": 476,
-      "prev": 474,
-      "diff": 2
+      "count": 468,
+      "plus": false,
+      "title": "Hanedakukoにある468件の宿泊先"
     },
     {
       "date": "2026-06-16",
-      "count": 481,
-      "prev": 479,
-      "diff": 2
+      "count": 473,
+      "plus": false,
+      "title": "Hanedakukoにある473件の宿泊先"
     },
     {
       "date": "2026-06-17",
-      "count": 477,
-      "prev": 474,
-      "diff": 3
+      "count": 469,
+      "plus": false,
+      "title": "Hanedakukoにある469件の宿泊先"
     },
     {
       "date": "2026-06-18",
-      "count": 477,
-      "prev": 474,
-      "diff": 3
+      "count": 469,
+      "plus": false,
+      "title": "Hanedakukoにある469件の宿泊先"
     },
     {
       "date": "2026-06-19",
-      "count": 450,
-      "prev": 449,
-      "diff": 1
+      "count": 444,
+      "plus": false,
+      "title": "Hanedakukoにある444件の宿泊先"
     },
     {
       "date": "2026-06-20",
-      "count": 432,
-      "prev": 427,
-      "diff": 5
+      "count": 430,
+      "plus": false,
+      "title": "Hanedakukoにある430件の宿泊先"
     },
     {
       "date": "2026-06-21",
-      "count": 482,
-      "prev": 481,
-      "diff": 1
+      "count": 483,
+      "plus": false,
+      "title": "Hanedakukoにある483件の宿泊先"
     },
     {
       "date": "2026-06-22",
-      "count": 487,
-      "prev": 484,
-      "diff": 3
+      "count": 486,
+      "plus": false,
+      "title": "Hanedakukoにある486件の宿泊先"
     },
     {
       "date": "2026-06-23",
-      "count": 500,
-      "prev": 493,
-      "diff": 7
+      "count": 497,
+      "plus": false,
+      "title": "Hanedakukoにある497件の宿泊先"
     },
     {
       "date": "2026-06-24",
-      "count": 506,
-      "prev": 497,
-      "diff": 9
+      "count": 500,
+      "plus": false,
+      "title": "Hanedakukoにある500件の宿泊先"
     },
     {
       "date": "2026-06-25",
-      "count": 473,
-      "prev": 469,
-      "diff": 4
+      "count": 467,
+      "plus": false,
+      "title": "Hanedakukoにある467件の宿泊先"
     },
     {
       "date": "2026-06-26",
-      "count": 466,
-      "prev": 463,
-      "diff": 3
+      "count": 462,
+      "plus": false,
+      "title": "Hanedakukoにある462件の宿泊先"
     },
     {
       "date": "2026-06-27",
-      "count": 458,
-      "prev": 452,
-      "diff": 6
+      "count": 455,
+      "plus": false,
+      "title": "Hanedakukoにある455件の宿泊先"
     },
     {
       "date": "2026-06-28",
       "count": 490,
-      "prev": 485,
-      "diff": 5
+      "plus": false,
+      "title": "Hanedakukoにある490件の宿泊先"
     },
     {
       "date": "2026-06-29",
-      "count": 488,
-      "prev": 483,
-      "diff": 5
+      "count": 482,
+      "plus": false,
+      "title": "Hanedakukoにある482件の宿泊先"
     },
     {
       "date": "2026-06-30",
-      "count": 487,
-      "prev": 483,
-      "diff": 4
+      "count": 482,
+      "plus": false,
+      "title": "Hanedakukoにある482件の宿泊先"
     },
     {
       "date": "2026-07-01",
-      "count": 479,
-      "prev": 472,
-      "diff": 7
+      "count": 475,
+      "plus": false,
+      "title": "Hanedakukoにある475件の宿泊先"
     },
     {
       "date": "2026-07-02",
-      "count": 466,
-      "prev": 461,
-      "diff": 5
+      "count": 457,
+      "plus": false,
+      "title": "Hanedakukoにある457件の宿泊先"
     },
     {
       "date": "2026-07-03",
-      "count": 452,
-      "prev": 444,
-      "diff": 8
+      "count": 444,
+      "plus": false,
+      "title": "Hanedakukoにある444件の宿泊先"
     },
     {
       "date": "2026-07-04",
-      "count": 434,
-      "prev": 427,
-      "diff": 7
+      "count": 429,
+      "plus": false,
+      "title": "Hanedakukoにある429件の宿泊先"
     },
     {
       "date": "2026-07-05",
-      "count": 470,
-      "prev": 463,
-      "diff": 7
+      "count": 462,
+      "plus": false,
+      "title": "Hanedakukoにある462件の宿泊先"
     },
     {
       "date": "2026-07-06",
-      "count": 478,
-      "prev": 469,
-      "diff": 9
+      "count": 467,
+      "plus": false,
+      "title": "Hanedakukoにある467件の宿泊先"
     },
     {
       "date": "2026-07-07",
-      "count": 490,
-      "prev": 485,
-      "diff": 5
+      "count": 485,
+      "plus": false,
+      "title": "Hanedakukoにある485件の宿泊先"
     },
     {
       "date": "2026-07-08",
-      "count": 502,
-      "prev": 499,
-      "diff": 3
+      "count": 495,
+      "plus": false,
+      "title": "Hanedakukoにある495件の宿泊先"
     },
     {
       "date": "2026-07-09",
-      "count": 486,
-      "prev": 479,
-      "diff": 7
+      "count": 484,
+      "plus": false,
+      "title": "Hanedakukoにある484件の宿泊先"
     },
     {
       "date": "2026-07-10",
       "count": 482,
-      "prev": 476,
-      "diff": 6
+      "plus": false,
+      "title": "Hanedakukoにある482件の宿泊先"
     },
     {
       "date": "2026-07-11",
-      "count": 453,
-      "prev": 448,
-      "diff": 5
+      "count": 451,
+      "plus": false,
+      "title": "Hanedakukoにある451件の宿泊先"
     },
     {
       "date": "2026-07-12",
-      "count": 502,
-      "prev": 499,
-      "diff": 3
+      "count": 500,
+      "plus": false,
+      "title": "Hanedakukoにある500件の宿泊先"
     },
     {
       "date": "2026-07-13",
-      "count": 513,
-      "prev": 508,
-      "diff": 5
+      "count": 509,
+      "plus": false,
+      "title": "Hanedakukoにある509件の宿泊先"
     },
     {
       "date": "2026-07-14",
-      "count": 503,
-      "prev": 499,
-      "diff": 4
+      "count": 504,
+      "plus": false,
+      "title": "Hanedakukoにある504件の宿泊先"
     },
     {
       "date": "2026-07-15",
-      "count": 499,
-      "prev": 501,
-      "diff": -2
+      "count": 498,
+      "plus": false,
+      "title": "Hanedakukoにある498件の宿泊先"
     },
     {
       "date": "2026-07-16",
-      "count": 486,
-      "prev": 482,
-      "diff": 4
+      "count": 485,
+      "plus": false,
+      "title": "Hanedakukoにある485件の宿泊先"
     },
     {
       "date": "2026-07-17",
-      "count": 477,
-      "prev": 470,
-      "diff": 7
+      "count": 491,
+      "plus": false,
+      "title": "Hanedakukoにある491件の宿泊先"
     },
     {
       "date": "2026-07-18",
       "count": 453,
-      "prev": 447,
-      "diff": 6
+      "plus": false,
+      "title": "Hanedakukoにある453件の宿泊先"
     },
     {
       "date": "2026-07-19",
-      "count": 483,
-      "prev": 479,
-      "diff": 4
+      "count": 482,
+      "plus": false,
+      "title": "Hanedakukoにある482件の宿泊先"
     },
     {
       "date": "2026-07-20",
-      "count": 502,
-      "prev": 501,
-      "diff": 1
+      "count": 500,
+      "plus": false,
+      "title": "Hanedakukoにある500件の宿泊先"
     },
     {
       "date": "2026-07-21",
       "count": 499,
-      "prev": 499,
-      "diff": 0
+      "plus": false,
+      "title": "Hanedakukoにある499件の宿泊先"
     },
     {
       "date": "2026-07-22",
-      "count": 505,
-      "prev": 504,
-      "diff": 1
+      "count": 502,
+      "plus": false,
+      "title": "Hanedakukoにある502件の宿泊先"
     },
     {
       "date": "2026-07-23",
-      "count": 510,
-      "prev": 506,
-      "diff": 4
+      "count": 506,
+      "plus": false,
+      "title": "Hanedakukoにある506件の宿泊先"
     },
     {
       "date": "2026-07-24",
-      "count": 481,
-      "prev": 478,
-      "diff": 3
+      "count": 477,
+      "plus": false,
+      "title": "Hanedakukoにある477件の宿泊先"
     },
     {
       "date": "2026-07-25",
-      "count": 453,
-      "prev": 452,
-      "diff": 1
+      "count": 450,
+      "plus": false,
+      "title": "Hanedakukoにある450件の宿泊先"
     },
     {
       "date": "2026-07-26",
-      "count": 505,
-      "prev": 502,
-      "diff": 3
+      "count": 501,
+      "plus": false,
+      "title": "Hanedakukoにある501件の宿泊先"
     },
     {
       "date": "2026-07-27",
-      "count": 519,
-      "prev": 514,
-      "diff": 5
+      "count": 512,
+      "plus": false,
+      "title": "Hanedakukoにある512件の宿泊先"
     },
     {
       "date": "2026-07-28",
-      "count": 516,
-      "prev": 509,
-      "diff": 7
+      "count": 506,
+      "plus": false,
+      "title": "Hanedakukoにある506件の宿泊先"
     },
     {
       "date": "2026-07-29",
-      "count": 543,
-      "prev": 538,
-      "diff": 5
+      "count": 537,
+      "plus": false,
+      "title": "Hanedakukoにある537件の宿泊先"
     },
     {
       "date": "2026-07-30",
-      "count": 533,
-      "prev": 525,
-      "diff": 8
+      "count": 531,
+      "plus": false,
+      "title": "Hanedakukoにある531件の宿泊先"
     },
     {
       "date": "2026-07-31",
-      "count": 529,
-      "prev": 524,
-      "diff": 5
+      "count": 527,
+      "plus": false,
+      "title": "Hanedakukoにある527件の宿泊先"
     },
     {
       "date": "2026-08-01",
-      "count": 500,
-      "prev": 497,
-      "diff": 3
+      "count": 499,
+      "plus": false,
+      "title": "Hanedakukoにある499件の宿泊先"
     },
     {
       "date": "2026-08-02",
-      "count": 527,
-      "prev": 526,
-      "diff": 1
+      "count": 525,
+      "plus": false,
+      "title": "Hanedakukoにある525件の宿泊先"
     },
     {
       "date": "2026-08-03",
-      "count": 552,
-      "prev": 552,
-      "diff": 0
+      "count": 550,
+      "plus": false,
+      "title": "Hanedakukoにある550件の宿泊先"
     },
     {
       "date": "2026-08-04",
-      "count": 552,
-      "prev": 551,
-      "diff": 1
+      "count": 545,
+      "plus": false,
+      "title": "Hanedakukoにある545件の宿泊先"
     },
     {
       "date": "2026-08-05",
-      "count": 557,
-      "prev": 556,
-      "diff": 1
+      "count": 550,
+      "plus": false,
+      "title": "Hanedakukoにある550件の宿泊先"
     },
     {
       "date": "2026-08-06",
-      "count": 556,
-      "prev": 555,
-      "diff": 1
+      "count": 551,
+      "plus": false,
+      "title": "Hanedakukoにある551件の宿泊先"
     },
     {
       "date": "2026-08-07",
-      "count": 539,
-      "prev": 542,
-      "diff": -3
+      "count": 535,
+      "plus": false,
+      "title": "Hanedakukoにある535件の宿泊先"
     },
     {
       "date": "2026-08-08",
-      "count": 529,
-      "prev": 528,
-      "diff": 1
+      "count": 526,
+      "plus": false,
+      "title": "Hanedakukoにある526件の宿泊先"
     },
     {
       "date": "2026-08-09",
-      "count": 554,
-      "prev": 555,
-      "diff": -1
+      "count": 551,
+      "plus": false,
+      "title": "Hanedakukoにある551件の宿泊先"
     },
     {
       "date": "2026-08-10",
-      "count": 563,
-      "prev": 563,
-      "diff": 0
+      "count": 558,
+      "plus": false,
+      "title": "Hanedakukoにある558件の宿泊先"
     },
     {
       "date": "2026-08-11",
-      "count": 560,
-      "prev": 558,
-      "diff": 2
+      "count": 556,
+      "plus": false,
+      "title": "Hanedakukoにある556件の宿泊先"
     },
     {
       "date": "2026-08-12",
-      "count": 562,
-      "prev": 561,
-      "diff": 1
+      "count": 557,
+      "plus": false,
+      "title": "Hanedakukoにある557件の宿泊先"
     },
     {
       "date": "2026-08-13",
-      "count": 558,
-      "prev": 556,
-      "diff": 2
+      "count": 551,
+      "plus": false,
+      "title": "Hanedakukoにある551件の宿泊先"
     },
     {
       "date": "2026-08-14",
       "count": 557,
-      "prev": 558,
-      "diff": -1
+      "plus": false,
+      "title": "Hanedakukoにある557件の宿泊先"
     },
     {
       "date": "2026-08-15",
-      "count": 564,
-      "prev": 562,
-      "diff": 2
+      "count": 562,
+      "plus": false,
+      "title": "Hanedakukoにある562件の宿泊先"
     },
     {
       "date": "2026-08-16",
-      "count": 585,
-      "prev": 583,
-      "diff": 2
+      "count": 583,
+      "plus": false,
+      "title": "Hanedakukoにある583件の宿泊先"
     },
     {
       "date": "2026-08-17",
-      "count": 597,
-      "prev": 593,
-      "diff": 4
+      "count": 596,
+      "plus": false,
+      "title": "Hanedakukoにある596件の宿泊先"
     },
     {
       "date": "2026-08-18",
-      "count": 605,
-      "prev": 600,
-      "diff": 5
+      "count": 602,
+      "plus": false,
+      "title": "Hanedakukoにある602件の宿泊先"
     },
     {
       "date": "2026-08-19",
-      "count": 594,
-      "prev": 592,
-      "diff": 2
+      "count": 590,
+      "plus": false,
+      "title": "Hanedakukoにある590件の宿泊先"
     },
     {
       "date": "2026-08-20",
-      "count": 594,
-      "prev": 586,
-      "diff": 8
+      "count": 586,
+      "plus": false,
+      "title": "Hanedakukoにある586件の宿泊先"
     },
     {
       "date": "2026-08-21",
-      "count": 579,
-      "prev": 574,
-      "diff": 5
+      "count": 573,
+      "plus": false,
+      "title": "Hanedakukoにある573件の宿泊先"
     },
     {
       "date": "2026-08-22",
-      "count": 579,
-      "prev": 573,
-      "diff": 6
+      "count": 573,
+      "plus": false,
+      "title": "Hanedakukoにある573件の宿泊先"
     },
     {
       "date": "2026-08-23",
-      "count": 602,
-      "prev": 594,
-      "diff": 8
+      "count": 596,
+      "plus": false,
+      "title": "Hanedakukoにある596件の宿泊先"
     },
     {
       "date": "2026-08-24",
-      "count": 609,
-      "prev": 600,
-      "diff": 9
+      "count": 604,
+      "plus": false,
+      "title": "Hanedakukoにある604件の宿泊先"
     },
     {
       "date": "2026-08-25",
-      "count": 609,
-      "prev": 602,
-      "diff": 7
+      "count": 601,
+      "plus": false,
+      "title": "Hanedakukoにある601件の宿泊先"
     },
     {
       "date": "2026-08-26",
-      "count": 613,
-      "prev": 607,
-      "diff": 6
+      "count": 605,
+      "plus": false,
+      "title": "Hanedakukoにある605件の宿泊先"
     },
     {
       "date": "2026-08-27",
-      "count": 619,
-      "prev": 612,
-      "diff": 7
+      "count": 608,
+      "plus": false,
+      "title": "Hanedakukoにある608件の宿泊先"
     },
     {
       "date": "2026-08-28",
-      "count": 605,
-      "prev": 598,
-      "diff": 7
+      "count": 601,
+      "plus": false,
+      "title": "Hanedakukoにある601件の宿泊先"
     },
     {
       "date": "2026-08-29",
-      "count": 600,
-      "prev": 593,
-      "diff": 7
+      "count": 599,
+      "plus": false,
+      "title": "Hanedakukoにある599件の宿泊先"
     },
     {
       "date": "2026-08-30",
       "count": 629,
-      "prev": 626,
-      "diff": 3
+      "plus": false,
+      "title": "Hanedakukoにある629件の宿泊先"
     },
     {
       "date": "2026-08-31",
-      "count": 634,
-      "prev": 629,
-      "diff": 5
+      "count": 631,
+      "plus": false,
+      "title": "Hanedakukoにある631件の宿泊先"
     },
     {
       "date": "2026-09-01",
-      "count": 616,
-      "prev": 610,
-      "diff": 6
+      "count": 612,
+      "plus": false,
+      "title": "Hanedakukoにある612件の宿泊先"
     },
     {
       "date": "2026-09-02",
-      "count": 616,
-      "prev": 608,
-      "diff": 8
+      "count": 612,
+      "plus": false,
+      "title": "Hanedakukoにある612件の宿泊先"
     },
     {
       "date": "2026-09-03",
-      "count": 608,
-      "prev": 603,
-      "diff": 5
+      "count": 605,
+      "plus": false,
+      "title": "Hanedakukoにある605件の宿泊先"
     },
     {
       "date": "2026-09-04",
       "count": 585,
-      "prev": 581,
-      "diff": 4
+      "plus": false,
+      "title": "Hanedakukoにある585件の宿泊先"
     },
     {
       "date": "2026-09-05",
       "count": 580,
-      "prev": 573,
-      "diff": 7
+      "plus": false,
+      "title": "Hanedakukoにある580件の宿泊先"
     },
     {
       "date": "2026-09-06",
-      "count": 596,
-      "prev": 589,
-      "diff": 7
+      "count": 594,
+      "plus": false,
+      "title": "Hanedakukoにある594件の宿泊先"
     },
     {
       "date": "2026-09-07",
       "count": 596,
-      "prev": 590,
-      "diff": 6
+      "plus": false,
+      "title": "Hanedakukoにある596件の宿泊先"
     },
     {
       "date": "2026-09-08",
       "count": 606,
-      "prev": 600,
-      "diff": 6
+      "plus": false,
+      "title": "Hanedakukoにある606件の宿泊先"
     },
     {
       "date": "2026-09-09",
-      "count": 612,
-      "prev": 607,
-      "diff": 5
+      "count": 613,
+      "plus": false,
+      "title": "Hanedakukoにある613件の宿泊先"
     },
     {
       "date": "2026-09-10",
-      "count": 604,
-      "prev": 598,
-      "diff": 6
+      "count": 602,
+      "plus": false,
+      "title": "Hanedakukoにある602件の宿泊先"
     },
     {
       "date": "2026-09-11",
-      "count": 595,
-      "prev": 589,
-      "diff": 6
+      "count": 594,
+      "plus": false,
+      "title": "Hanedakukoにある594件の宿泊先"
     },
     {
       "date": "2026-09-12",
       "count": 584,
-      "prev": 581,
-      "diff": 3
+      "plus": false,
+      "title": "Hanedakukoにある584件の宿泊先"
     },
     {
       "date": "2026-09-13",
-      "count": 615,
-      "prev": 609,
-      "diff": 6
+      "count": 611,
+      "plus": false,
+      "title": "Hanedakukoにある611件の宿泊先"
     },
     {
       "date": "2026-09-14",
       "count": 620,
-      "prev": 615,
-      "diff": 5
+      "plus": false,
+      "title": "Hanedakukoにある620件の宿泊先"
     },
     {
       "date": "2026-09-15",
       "count": 610,
-      "prev": 605,
-      "diff": 5
+      "plus": false,
+      "title": "Hanedakukoにある610件の宿泊先"
     },
     {
       "date": "2026-09-16",
-      "count": 606,
-      "prev": 600,
-      "diff": 6
+      "count": 604,
+      "plus": false,
+      "title": "Hanedakukoにある604件の宿泊先"
     },
     {
       "date": "2026-09-17",
-      "count": 593,
-      "prev": 588,
-      "diff": 5
+      "count": 592,
+      "plus": false,
+      "title": "Hanedakukoにある592件の宿泊先"
     },
     {
       "date": "2026-09-18",
-      "count": 558,
-      "prev": 553,
-      "diff": 5
+      "count": 556,
+      "plus": false,
+      "title": "Hanedakukoにある556件の宿泊先"
     },
     {
       "date": "2026-09-19",
-      "count": 526,
-      "prev": 524,
-      "diff": 2
+      "count": 527,
+      "plus": false,
+      "title": "Hanedakukoにある527件の宿泊先"
     },
     {
       "date": "2026-09-20",
-      "count": 538,
-      "prev": 532,
-      "diff": 6
+      "count": 534,
+      "plus": false,
+      "title": "Hanedakukoにある534件の宿泊先"
     },
     {
       "date": "2026-09-21",
-      "count": 553,
-      "prev": 547,
-      "diff": 6
+      "count": 552,
+      "plus": false,
+      "title": "Hanedakukoにある552件の宿泊先"
     },
     {
       "date": "2026-09-22",
       "count": 555,
-      "prev": 550,
-      "diff": 5
+      "plus": false,
+      "title": "Hanedakukoにある555件の宿泊先"
     },
     {
       "date": "2026-09-23",
-      "count": 565,
-      "prev": 560,
-      "diff": 5
+      "count": 563,
+      "plus": false,
+      "title": "Hanedakukoにある563件の宿泊先"
     },
     {
       "date": "2026-09-24",
-      "count": 571,
-      "prev": 563,
-      "diff": 8
+      "count": 568,
+      "plus": false,
+      "title": "Hanedakukoにある568件の宿泊先"
     },
     {
       "date": "2026-09-25",
-      "count": 560,
-      "prev": 553,
-      "diff": 7
+      "count": 559,
+      "plus": false,
+      "title": "Hanedakukoにある559件の宿泊先"
     },
     {
       "date": "2026-09-26",
-      "count": 556,
-      "prev": 548,
-      "diff": 8
+      "count": 557,
+      "plus": false,
+      "title": "Hanedakukoにある557件の宿泊先"
     },
     {
       "date": "2026-09-27",
       "count": 579,
-      "prev": 574,
-      "diff": 5
+      "plus": false,
+      "title": "Hanedakukoにある579件の宿泊先"
     },
     {
       "date": "2026-09-28",
-      "count": 584,
-      "prev": 577,
-      "diff": 7
+      "count": 586,
+      "plus": false,
+      "title": "Hanedakukoにある586件の宿泊先"
     },
     {
       "date": "2026-09-29",
       "count": 590,
-      "prev": 583,
-      "diff": 7
+      "plus": false,
+      "title": "Hanedakukoにある590件の宿泊先"
     },
     {
       "date": "2026-09-30",
-      "count": 574,
-      "prev": 566,
-      "diff": 8
+      "count": 576,
+      "plus": false,
+      "title": "Hanedakukoにある576件の宿泊先"
     },
     {
       "date": "2026-10-01",
-      "count": 543,
-      "prev": 538,
-      "diff": 5
+      "count": 540,
+      "plus": false,
+      "title": "Hanedakukoにある540件の宿泊先"
     },
     {
       "date": "2026-10-02",
-      "count": 521,
-      "prev": 513,
-      "diff": 8
+      "count": 516,
+      "plus": false,
+      "title": "Hanedakukoにある516件の宿泊先"
     },
     {
       "date": "2026-10-03",
-      "count": 496,
-      "prev": 488,
-      "diff": 8
+      "count": 493,
+      "plus": false,
+      "title": "Hanedakukoにある493件の宿泊先"
     },
     {
       "date": "2026-10-04",
-      "count": 511,
-      "prev": 502,
-      "diff": 9
+      "count": 507,
+      "plus": false,
+      "title": "Hanedakukoにある507件の宿泊先"
     },
     {
       "date": "2026-10-05",
-      "count": 519,
-      "prev": 513,
-      "diff": 6
+      "count": 518,
+      "plus": false,
+      "title": "Hanedakukoにある518件の宿泊先"
     },
     {
       "date": "2026-10-06",
       "count": 516,
-      "prev": 512,
-      "diff": 4
+      "plus": false,
+      "title": "Hanedakukoにある516件の宿泊先"
     },
     {
       "date": "2026-10-07",
-      "count": 513,
-      "prev": 507,
-      "diff": 6
+      "count": 508,
+      "plus": false,
+      "title": "Hanedakukoにある508件の宿泊先"
     },
     {
       "date": "2026-10-08",
-      "count": 505,
-      "prev": 502,
-      "diff": 3
+      "count": 504,
+      "plus": false,
+      "title": "Hanedakukoにある504件の宿泊先"
     },
     {
       "date": "2026-10-09",
-      "count": 503,
-      "prev": 500,
-      "diff": 3
+      "count": 501,
+      "plus": false,
+      "title": "Hanedakukoにある501件の宿泊先"
     },
     {
       "date": "2026-10-10",
-      "count": 487,
-      "prev": 480,
-      "diff": 7
+      "count": 481,
+      "plus": false,
+      "title": "Hanedakukoにある481件の宿泊先"
     },
     {
       "date": "2026-10-11",
-      "count": 505,
-      "prev": 498,
-      "diff": 7
+      "count": 499,
+      "plus": false,
+      "title": "Hanedakukoにある499件の宿泊先"
     },
     {
       "date": "2026-10-12",
-      "count": 517,
-      "prev": 508,
-      "diff": 9
+      "count": 508,
+      "plus": false,
+      "title": "Hanedakukoにある508件の宿泊先"
     },
     {
       "date": "2026-10-13",
-      "count": 525,
-      "prev": 517,
-      "diff": 8
+      "count": 516,
+      "plus": false,
+      "title": "Hanedakukoにある516件の宿泊先"
     },
     {
       "date": "2026-10-14",
-      "count": 524,
-      "prev": 493,
-      "diff": 31
+      "count": 518,
+      "plus": false,
+      "title": "Hanedakukoにある518件の宿泊先"
     },
     {
       "date": "2026-10-15",
-      "count": 419,
-      "prev": 406,
-      "diff": 13
+      "count": 501,
+      "plus": false,
+      "title": "Hanedakukoにある501件の宿泊先"
     },
     {
       "date": "2026-10-16",
-      "count": 394,
-      "prev": 388,
-      "diff": 6
+      "count": 399,
+      "plus": false,
+      "title": "Hanedakukoにある399件の宿泊先"
     },
     {
       "date": "2026-10-17",
-      "count": 375,
-      "prev": 366,
-      "diff": 9
+      "count": 369,
+      "plus": false,
+      "title": "Hanedakukoにある369件の宿泊先"
+    },
+    {
+      "date": "2026-10-18",
+      "count": 389,
+      "plus": false,
+      "title": "Hanedakukoにある389件の宿泊先"
+    },
+    {
+      "date": "2026-10-19",
+      "count": 399,
+      "plus": false,
+      "title": "Hanedakukoにある399件の宿泊先"
     }
   ]
 }
