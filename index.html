@@ -2,119 +2,54 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Airbnb 羽田空港エリア 競合市場在庫数 - 2026-04-28</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<title>Airbnb 羽田空港エリア 在庫モニタ 2026-04-29</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; margin: 0; padding: 24px; background: #f7f7f9; color: #222; }
-.container { max-width: 1100px; margin: 0 auto; }
-h1 { font-size: 22px; margin: 0 0 8px; }
-.subtitle { color: #666; margin: 0 0 20px; font-size: 14px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
-.card { background: #fff; padding: 14px 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-.card .label { color: #888; font-size: 12px; }
-.card .value { font-size: 22px; font-weight: bold; margin-top: 4px; }
-.card .delta { color: #2a7; font-size: 12px; margin-top: 2px; }
-.card .delta.neg { color: #c33; }
-.chart-box { background: #fff; padding: 18px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 18px; }
-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eee; font-size: 13px; }
-th { background: #f0f0f3; font-weight: 600; }
-.section-title { font-size: 16px; margin: 18px 0 10px; }
-.footer { color: #888; font-size: 12px; margin-top: 24px; text-align: center; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif; margin: 20px; background: #f7f7fa; color: #222; }
+h1 { font-size: 22px; margin-bottom: 4px; }
+.sub { color: #555; margin-bottom: 16px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.card { background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.card .lbl { font-size: 12px; color: #777; }
+.card .val { font-size: 22px; font-weight: 700; margin-top: 4px; }
+.card .delta { font-size: 12px; margin-top: 2px; }
+.delta.up { color: #2e7d32; }
+.delta.down { color: #c62828; }
+.chart-wrap { background: white; border-radius: 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 16px; }
+.chart-wrap h2 { font-size: 16px; margin: 0 0 10px 0; }
+.foot { color: #888; font-size: 12px; margin-top: 8px; }
 </style>
 </head>
 <body>
-<div class="container">
-<h1>Airbnb 羽田空港エリア 競合市場在庫数</h1>
-<p class="subtitle">セグメント: Haneda Airport / Entire home / Guest Favorite / Adults 5 / 1 night ／ 取得日: 2026-04-28 ／ 184日分</p>
-
+<h1>Airbnb 羽田空港エリア 競合在庫モニタ</h1>
+<div class="sub">セグメント: まるまる貸切 × ゲストチョイス × 大人5人 × 1泊 ／ 取得日: 2026-04-29</div>
 <div class="cards">
-  <div class="card"><div class="label">当日件数</div><div class="value">299</div><div class="delta ">前回測定 (2026-04-26) 比 +95</div></div>
-  <div class="card"><div class="label">+7日</div><div class="value">341</div></div>
-  <div class="card"><div class="label">+30日</div><div class="value">261</div></div>
-  <div class="card"><div class="label">+60日</div><div class="value">444</div></div>
-  <div class="card"><div class="label">+90日</div><div class="value">520</div></div>
-  <div class="card"><div class="label">+180日</div><div class="value">435</div></div>
+  <div class="card"><div class="lbl">当日件数</div><div class="val">268</div><div class="delta down">前日比 -31</div></div>
+  <div class="card"><div class="lbl">+7日</div><div class="val">456</div></div>
+  <div class="card"><div class="lbl">+30日</div><div class="val">241</div></div>
+  <div class="card"><div class="lbl">+60日</div><div class="val">487</div></div>
+  <div class="card"><div class="lbl">+90日</div><div class="val">516</div></div>
+  <div class="card"><div class="lbl">+180日</div><div class="val">437</div></div>
+  <div class="card"><div class="lbl">期間 平均 / 中央値</div><div class="val">473.1</div><div class="delta">中央値 491.5</div></div>
+  <div class="card"><div class="lbl">期間 最小 / 最大</div><div class="val">106 / 638</div></div>
 </div>
-
-<div class="cards">
-  <div class="card"><div class="label">最小</div><div class="value">115</div></div>
-  <div class="card"><div class="label">最大</div><div class="value">634</div></div>
-  <div class="card"><div class="label">平均</div><div class="value">471</div></div>
-  <div class="card"><div class="label">中央値</div><div class="value">493</div></div>
-</div>
-
-<div class="chart-box">
-  <h2 class="section-title">日別 競合在庫数 (今日〜+183日)</h2>
-  <canvas id="dailyChart" height="100"></canvas>
-</div>
-
-<div class="chart-box">
-  <h2 class="section-title">月別 平均件数</h2>
-  <canvas id="monthlyChart" height="80"></canvas>
-</div>
-
-<h2 class="section-title">月別サマリ</h2>
-<table>
-  <thead><tr><th>月</th><th>平均件数</th></tr></thead>
-  <tbody>
-    <tr><td>2026-04</td><td>345</td></tr>
-    <tr><td>2026-05</td><td>269</td></tr>
-    <tr><td>2026-06</td><td>445</td></tr>
-    <tr><td>2026-07</td><td>484</td></tr>
-    <tr><td>2026-08</td><td>577</td></tr>
-    <tr><td>2026-09</td><td>584</td></tr>
-    <tr><td>2026-10</td><td>486</td></tr>
-  </tbody>
-</table>
-
-<p class="footer">Generated 2026-04-28</p>
-</div>
-
+<div class="chart-wrap"><h2>日別 在庫件数（2026-04-29 から 184日先まで）</h2><canvas id="dailyChart" height="100"></canvas></div>
+<div class="chart-wrap"><h2>月別 平均件数</h2><canvas id="monthlyChart" height="100"></canvas></div>
+<div class="foot">Source: Airbnb.jp 検索結果（structuredTitle 件数）／ 自動取得</div>
 <script>
-const labels = ["2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-24", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-05-31", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28"];
-const counts = [299, 375, 360, 266, 125, 115, 179, 341, 441, 434, 368, 333, 392, 348, 334, 324, 250, 214, 161, 251, 290, 304, 280, 230, 172, 150, 220, 246, 271, 284, 261, 237, 210, 296, 347, 371, 370, 386, 381, 392, 438, 455, 471, 477, 473, 441, 414, 449, 450, 454, 446, 446, 438, 426, 488, 493, 501, 500, 470, 458, 444, 493, 482, 485, 468, 456, 434, 407, 440, 451, 469, 476, 461, 453, 421, 484, 501, 497, 497, 491, 484, 455, 490, 517, 520, 522, 524, 496, 472, 522, 520, 508, 531, 523, 514, 487, 520, 557, 559, 556, 557, 541, 527, 557, 565, 570, 569, 563, 565, 556, 574, 588, 594, 589, 585, 580, 585, 604, 610, 612, 615, 620, 608, 601, 625, 634, 615, 611, 610, 594, 580, 600, 603, 612, 618, 610, 605, 593, 613, 614, 613, 606, 588, 554, 519, 530, 545, 542, 557, 565, 557, 550, 575, 582, 587, 572, 534, 510, 480, 494, 507, 508, 500, 483, 489, 472, 489, 497, 504, 507, 494, 479, 452, 477, 494, 511, 511, 506, 496, 488, 435, 437, 436, 417];
+const labels = ["2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-24", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-05-31", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29"];
+const counts = [268, 342, 259, 118, 106, 168, 336, 456, 423, 363, 327, 389, 344, 329, 321, 246, 212, 158, 244, 284, 295, 276, 223, 176, 150, 221, 247, 276, 285, 255, 241, 212, 300, 346, 367, 368, 380, 378, 394, 440, 457, 478, 482, 475, 443, 416, 458, 454, 461, 457, 453, 441, 422, 484, 483, 495, 496, 468, 460, 442, 487, 478, 484, 469, 461, 440, 409, 446, 453, 470, 471, 464, 452, 421, 487, 504, 502, 503, 492, 489, 456, 494, 522, 531, 528, 532, 501, 477, 530, 540, 516, 537, 530, 519, 489, 528, 563, 566, 561, 560, 545, 533, 565, 575, 581, 578, 572, 573, 565, 586, 595, 601, 594, 593, 585, 591, 609, 613, 617, 620, 624, 612, 603, 632, 638, 619, 613, 610, 598, 584, 607, 609, 617, 623, 611, 609, 595, 620, 617, 616, 608, 586, 555, 518, 533, 545, 542, 555, 566, 554, 547, 580, 582, 576, 565, 533, 510, 481, 496, 508, 511, 506, 484, 491, 471, 491, 500, 503, 502, 491, 479, 453, 479, 492, 504, 502, 496, 491, 488, 523, 437, 431, 414, 413];
 const monthlyLabels = ["2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10"];
-const monthlyVals = [345, 269, 445, 484, 577, 584, 486];
-
+const monthlyValues = [305.0, 265.8, 444.9, 488.6, 582.8, 585.3, 485.5];
 new Chart(document.getElementById('dailyChart'), {
   type: 'line',
-  data: {
-    labels,
-    datasets: [{
-      label: '在庫数',
-      data: counts,
-      borderColor: '#FF5A5F',
-      backgroundColor: 'rgba(255,90,95,0.12)',
-      tension: 0.25,
-      fill: true,
-      pointRadius: 0,
-      pointHoverRadius: 4,
-      borderWidth: 2,
-    }]
-  },
-  options: {
-    responsive: true,
-    interaction: { mode: 'index', intersect: false },
-    plugins: { legend: { display: false } },
-    scales: {
-      x: { ticks: { maxTicksLimit: 12, autoSkip: true } },
-      y: { beginAtZero: false }
-    }
-  }
+  data: { labels, datasets: [{ label: '在庫件数', data: counts, borderColor: '#305496', backgroundColor: 'rgba(48,84,150,0.15)', tension: 0.2, pointRadius: 0, fill: true }] },
+  options: { responsive: true, plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } }, scales: { x: { ticks: { maxTicksLimit: 18 } }, y: { beginAtZero: false } } }
 });
-
 new Chart(document.getElementById('monthlyChart'), {
   type: 'bar',
-  data: {
-    labels: monthlyLabels,
-    datasets: [{ label: '平均件数', data: monthlyVals, backgroundColor: '#00A699' }]
-  },
-  options: {
-    responsive: true,
-    plugins: { legend: { display: false } },
-    scales: { y: { beginAtZero: true } }
-  }
+  data: { labels: monthlyLabels, datasets: [{ label: '平均件数', data: monthlyValues, backgroundColor: '#5b9bd5' }] },
+  options: { responsive: true, plugins: { legend: { display: false } } }
 });
 </script>
 </body>
