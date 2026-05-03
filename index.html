@@ -1,89 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>羽田空港エリア 競合在庫モニタリング - 2026-05-02</title>
+<title>羽田空港エリア Airbnb 市場在庫モニター (2026-05-03)</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-body { font-family: 'Hiragino Sans', 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f7; color: #1d1d1f; }
-.container { max-width: 1200px; margin: 0 auto; }
-h1 { font-size: 24px; margin-bottom: 8px; }
-.subtitle { color: #6e6e73; font-size: 14px; margin-bottom: 24px; }
-.card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
-.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
-.metric { text-align: center; }
-.metric .label { font-size: 12px; color: #6e6e73; text-transform: uppercase; }
-.metric .value { font-size: 28px; font-weight: 600; margin-top: 4px; }
-.metric .delta { font-size: 14px; margin-top: 4px; }
-.delta.up { color: #d70015; }
-.delta.down { color: #007c41; }
-table { width: 100%; border-collapse: collapse; }
-th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #e5e5ea; font-size: 14px; }
-th { background: #f2f2f7; font-weight: 600; }
-.chart-wrap { position: relative; height: 400px; }
+  body { font-family: -apple-system, 'Hiragino Sans', sans-serif; max-width: 1200px; margin: 20px auto; padding: 0 20px; color: #222; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .sub { color: #888; font-size: 13px; margin-bottom: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 16px 0 24px; }
+  .card { background: #f7f7f9; border-radius: 8px; padding: 12px 14px; border: 1px solid #eaeaea; }
+  .card .lbl { font-size: 12px; color: #666; }
+  .card .v { font-size: 22px; font-weight: 600; margin-top: 4px; }
+  .card .d { font-size: 12px; margin-top: 2px; }
+  .pos { color: #1a8917; } .neg { color: #d73a49; }
+  table { border-collapse: collapse; width: 100%; margin-top: 12px; font-size: 14px; }
+  th, td { border: 1px solid #e6e6e6; padding: 6px 10px; text-align: right; }
+  th { background: #f0f0f3; }
+  td:first-child, th:first-child { text-align: left; }
+  canvas { background: #fff; }
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>羽田空港エリア 競合在庫モニタリング</h1>
-  <div class="subtitle">条件: まるまる貸切 × ゲストチョイス × 大人5名 × 1泊 ／ 取得日: 2026-05-02</div>
+<h1>羽田空港エリア Airbnb 市場在庫モニター</h1>
+<div class="sub">データ取得日: 2026-05-03 ／ 条件: まるまる貸切・大人5名・ゲストチョイス・1泊／183日先まで</div>
 
-  <div class="card">
-    <h3>主要指標</h3>
-    <div class="metrics">
-      <div class="metric"><div class="label">当日</div><div class="value">51</div><div class="delta down">前日比 -115</div></div>
-      <div class="metric"><div class="label">+7日</div><div class="value">364</div></div>
-      <div class="metric"><div class="label">+30日</div><div class="value">356</div></div>
-      <div class="metric"><div class="label">+60日</div><div class="value">479</div></div>
-      <div class="metric"><div class="label">+90日</div><div class="value">525</div></div>
-      <div class="metric"><div class="label">+180日</div><div class="value">433</div></div>
-    </div>
-    <div class="metrics" style="margin-top: 20px;">
-      <div class="metric"><div class="label">最小</div><div class="value">51</div></div>
-      <div class="metric"><div class="label">最大</div><div class="value">658</div></div>
-      <div class="metric"><div class="label">平均</div><div class="value">484.1</div></div>
-      <div class="metric"><div class="label">中央値</div><div class="value">502.0</div></div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>稼働率（アピチェ大森K803）</h3>
-    <table>
-      <tr><th>期間</th><th>日付</th><th>稼働率</th><th>予約</th><th>空室</th></tr>
-      <tr><td>〜30日</td><td>2026-05-02〜2026-05-31</td><td>86.7%</td><td>26日</td><td>4日</td></tr>
-      <tr><td>〜60日</td><td>2026-06-01〜2026-06-30</td><td>60.0%</td><td>18日</td><td>12日</td></tr>
-      <tr><td>〜90日</td><td>2026-07-01〜2026-07-30</td><td>46.7%</td><td>14日</td><td>16日</td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h3>日別在庫数推移（今日〜+183日）</h3>
-    <div class="chart-wrap"><canvas id="dailyChart"></canvas></div>
-  </div>
-
-  <div class="card">
-    <h3>月別平均在庫数</h3>
-    <div class="chart-wrap"><canvas id="monthlyChart"></canvas></div>
-  </div>
+<div class="grid">
+  <div class="card"><div class="lbl">当日件数</div><div class="v">32</div><div class="d neg">前日比 -19</div></div>
+  <div class="card"><div class="lbl">+7日</div><div class="v">380</div></div>
+  <div class="card"><div class="lbl">+30日</div><div class="v">326</div></div>
+  <div class="card"><div class="lbl">+60日</div><div class="v">402</div></div>
+  <div class="card"><div class="lbl">+90日</div><div class="v">448</div></div>
+  <div class="card"><div class="lbl">+180日</div><div class="v">357</div></div>
+  <div class="card"><div class="lbl">期間 平均</div><div class="v">421.5</div><div class="d">中央値 434</div></div>
+  <div class="card"><div class="lbl">期間 範囲</div><div class="v">32〜579</div></div>
 </div>
 
-<script>
-const dailyData = {
-  labels: ["2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-24", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-05-31", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01"],
-  datasets: [{ label: '在庫数', data: [51, 65, 140, 325, 476, 491, 424, 364, 405, 355, 329, 317, 246, 211, 152, 239, 285, 300, 272, 224, 174, 145, 220, 243, 269, 280, 256, 236, 204, 293, 356, 371, 368, 386, 385, 390, 442, 474, 492, 492, 486, 442, 413, 455, 457, 465, 468, 468, 446, 429, 488, 501, 511, 504, 472, 461, 446, 488, 483, 495, 479, 469, 445, 407, 451, 463, 483, 479, 472, 461, 430, 496, 511, 502, 502, 491, 487, 456, 490, 530, 535, 531, 533, 501, 476, 525, 538, 524, 545, 545, 525, 494, 532, 570, 572, 564, 560, 549, 536, 567, 577, 588, 584, 579, 579, 571, 596, 607, 613, 611, 611, 599, 603, 620, 626, 629, 633, 638, 631, 622, 648, 658, 635, 631, 630, 614, 601, 622, 623, 632, 640, 632, 624, 609, 632, 634, 630, 623, 606, 570, 528, 544, 556, 552, 569, 579, 565, 562, 591, 596, 595, 584, 548, 524, 493, 505, 517, 517, 507, 488, 489, 468, 493, 508, 515, 520, 504, 483, 458, 486, 498, 517, 516, 516, 505, 490, 527, 531, 531, 515, 433, 416, 424, 445], borderColor: '#FF385C', backgroundColor: 'rgba(255,56,92,0.1)', fill: true, tension: 0.3, pointRadius: 1 }]
-};
-new Chart(document.getElementById('dailyChart'), {
-  type: 'line', data: dailyData,
-  options: { responsive: true, maintainAspectRatio: false, scales: { x: { ticks: { maxTicksLimit: 12 } } } }
-});
+<canvas id="dailyChart" height="120"></canvas>
 
-const monthlyData = {
-  labels: ["2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10", "2026-11"],
-  datasets: [{ label: '月別平均', data: [266.4, 451.1, 493.0, 592.5, 600.3, 498.1, 445], backgroundColor: '#0071E3' }]
-};
-new Chart(document.getElementById('monthlyChart'), {
-  type: 'bar', data: monthlyData,
-  options: { responsive: true, maintainAspectRatio: false }
+<h2 style="margin-top:32px;font-size:16px;">月別平均</h2>
+<table>
+<thead><tr><th>月</th><th>平均</th><th>最小</th><th>最大</th></tr></thead>
+<tbody>
+<tr><td>2026-05</td><td>237.0</td><td>32</td><td>430</td></tr><tr><td>2026-06</td><td>390.6</td><td>307</td><td>444</td></tr><tr><td>2026-07</td><td>435.5</td><td>370</td><td>485</td></tr><tr><td>2026-08</td><td>525.8</td><td>448</td><td>579</td></tr><tr><td>2026-09</td><td>507.1</td><td>453</td><td>552</td></tr><tr><td>2026-10</td><td>424.0</td><td>357</td><td>466</td></tr><tr><td>2026-11</td><td>387</td><td>387</td><td>387</td></tr>
+</tbody>
+</table>
+
+<script>
+const data = [{"date": "2026-05-03", "count": 32}, {"date": "2026-05-04", "count": 109}, {"date": "2026-05-05", "count": 292}, {"date": "2026-05-06", "count": 418}, {"date": "2026-05-07", "count": 430}, {"date": "2026-05-08", "count": 393}, {"date": "2026-05-09", "count": 340}, {"date": "2026-05-10", "count": 380}, {"date": "2026-05-11", "count": 312}, {"date": "2026-05-12", "count": 289}, {"date": "2026-05-13", "count": 280}, {"date": "2026-05-14", "count": 206}, {"date": "2026-05-15", "count": 182}, {"date": "2026-05-16", "count": 124}, {"date": "2026-05-17", "count": 211}, {"date": "2026-05-18", "count": 244}, {"date": "2026-05-19", "count": 245}, {"date": "2026-05-20", "count": 228}, {"date": "2026-05-21", "count": 179}, {"date": "2026-05-22", "count": 145}, {"date": "2026-05-23", "count": 122}, {"date": "2026-05-24", "count": 185}, {"date": "2026-05-25", "count": 208}, {"date": "2026-05-26", "count": 229}, {"date": "2026-05-27", "count": 238}, {"date": "2026-05-28", "count": 215}, {"date": "2026-05-29", "count": 208}, {"date": "2026-05-30", "count": 176}, {"date": "2026-05-31", "count": 254}, {"date": "2026-06-01", "count": 307}, {"date": "2026-06-02", "count": 326}, {"date": "2026-06-03", "count": 317}, {"date": "2026-06-04", "count": 323}, {"date": "2026-06-05", "count": 331}, {"date": "2026-06-06", "count": 337}, {"date": "2026-06-07", "count": 394}, {"date": "2026-06-08", "count": 414}, {"date": "2026-06-09", "count": 421}, {"date": "2026-06-10", "count": 425}, {"date": "2026-06-11", "count": 419}, {"date": "2026-06-12", "count": 382}, {"date": "2026-06-13", "count": 358}, {"date": "2026-06-14", "count": 394}, {"date": "2026-06-15", "count": 399}, {"date": "2026-06-16", "count": 400}, {"date": "2026-06-17", "count": 400}, {"date": "2026-06-18", "count": 395}, {"date": "2026-06-19", "count": 388}, {"date": "2026-06-20", "count": 369}, {"date": "2026-06-21", "count": 439}, {"date": "2026-06-22", "count": 436}, {"date": "2026-06-23", "count": 444}, {"date": "2026-06-24", "count": 438}, {"date": "2026-06-25", "count": 404}, {"date": "2026-06-26", "count": 398}, {"date": "2026-06-27", "count": 387}, {"date": "2026-06-28", "count": 429}, {"date": "2026-06-29", "count": 414}, {"date": "2026-06-30", "count": 431}, {"date": "2026-07-01", "count": 414}, {"date": "2026-07-02", "count": 402}, {"date": "2026-07-03", "count": 400}, {"date": "2026-07-04", "count": 370}, {"date": "2026-07-05", "count": 404}, {"date": "2026-07-06", "count": 408}, {"date": "2026-07-07", "count": 418}, {"date": "2026-07-08", "count": 419}, {"date": "2026-07-09", "count": 404}, {"date": "2026-07-10", "count": 404}, {"date": "2026-07-11", "count": 371}, {"date": "2026-07-12", "count": 437}, {"date": "2026-07-13", "count": 444}, {"date": "2026-07-14", "count": 435}, {"date": "2026-07-15", "count": 434}, {"date": "2026-07-16", "count": 424}, {"date": "2026-07-17", "count": 436}, {"date": "2026-07-18", "count": 409}, {"date": "2026-07-19", "count": 444}, {"date": "2026-07-20", "count": 475}, {"date": "2026-07-21", "count": 474}, {"date": "2026-07-22", "count": 464}, {"date": "2026-07-23", "count": 469}, {"date": "2026-07-24", "count": 454}, {"date": "2026-07-25", "count": 430}, {"date": "2026-07-26", "count": 471}, {"date": "2026-07-27", "count": 479}, {"date": "2026-07-28", "count": 462}, {"date": "2026-07-29", "count": 482}, {"date": "2026-07-30", "count": 480}, {"date": "2026-07-31", "count": 485}, {"date": "2026-08-01", "count": 448}, {"date": "2026-08-02", "count": 486}, {"date": "2026-08-03", "count": 519}, {"date": "2026-08-04", "count": 506}, {"date": "2026-08-05", "count": 495}, {"date": "2026-08-06", "count": 486}, {"date": "2026-08-07", "count": 497}, {"date": "2026-08-08", "count": 475}, {"date": "2026-08-09", "count": 505}, {"date": "2026-08-10", "count": 514}, {"date": "2026-08-11", "count": 518}, {"date": "2026-08-12", "count": 524}, {"date": "2026-08-13", "count": 515}, {"date": "2026-08-14", "count": 527}, {"date": "2026-08-15", "count": 523}, {"date": "2026-08-16", "count": 540}, {"date": "2026-08-17", "count": 539}, {"date": "2026-08-18", "count": 546}, {"date": "2026-08-19", "count": 541}, {"date": "2026-08-20", "count": 538}, {"date": "2026-08-21", "count": 532}, {"date": "2026-08-22", "count": 531}, {"date": "2026-08-23", "count": 548}, {"date": "2026-08-24", "count": 545}, {"date": "2026-08-25", "count": 548}, {"date": "2026-08-26", "count": 551}, {"date": "2026-08-27", "count": 544}, {"date": "2026-08-28", "count": 554}, {"date": "2026-08-29", "count": 547}, {"date": "2026-08-30", "count": 578}, {"date": "2026-08-31", "count": 579}, {"date": "2026-09-01", "count": 552}, {"date": "2026-09-02", "count": 532}, {"date": "2026-09-03", "count": 520}, {"date": "2026-09-04", "count": 519}, {"date": "2026-09-05", "count": 511}, {"date": "2026-09-06", "count": 526}, {"date": "2026-09-07", "count": 526}, {"date": "2026-09-08", "count": 542}, {"date": "2026-09-09", "count": 542}, {"date": "2026-09-10", "count": 534}, {"date": "2026-09-11", "count": 532}, {"date": "2026-09-12", "count": 526}, {"date": "2026-09-13", "count": 545}, {"date": "2026-09-14", "count": 539}, {"date": "2026-09-15", "count": 531}, {"date": "2026-09-16", "count": 522}, {"date": "2026-09-17", "count": 502}, {"date": "2026-09-18", "count": 483}, {"date": "2026-09-19", "count": 453}, {"date": "2026-09-20", "count": 463}, {"date": "2026-09-21", "count": 471}, {"date": "2026-09-22", "count": 457}, {"date": "2026-09-23", "count": 479}, {"date": "2026-09-24", "count": 478}, {"date": "2026-09-25", "count": 476}, {"date": "2026-09-26", "count": 472}, {"date": "2026-09-27", "count": 509}, {"date": "2026-09-28", "count": 498}, {"date": "2026-09-29", "count": 491}, {"date": "2026-09-30", "count": 482}, {"date": "2026-10-01", "count": 466}, {"date": "2026-10-02", "count": 445}, {"date": "2026-10-03", "count": 426}, {"date": "2026-10-04", "count": 435}, {"date": "2026-10-05", "count": 444}, {"date": "2026-10-06", "count": 441}, {"date": "2026-10-07", "count": 433}, {"date": "2026-10-08", "count": 419}, {"date": "2026-10-09", "count": 434}, {"date": "2026-10-10", "count": 412}, {"date": "2026-10-11", "count": 433}, {"date": "2026-10-12", "count": 444}, {"date": "2026-10-13", "count": 438}, {"date": "2026-10-14", "count": 426}, {"date": "2026-10-15", "count": 412}, {"date": "2026-10-16", "count": 410}, {"date": "2026-10-17", "count": 390}, {"date": "2026-10-18", "count": 418}, {"date": "2026-10-19", "count": 422}, {"date": "2026-10-20", "count": 433}, {"date": "2026-10-21", "count": 424}, {"date": "2026-10-22", "count": 415}, {"date": "2026-10-23", "count": 417}, {"date": "2026-10-24", "count": 407}, {"date": "2026-10-25", "count": 448}, {"date": "2026-10-26", "count": 443}, {"date": "2026-10-27", "count": 438}, {"date": "2026-10-28", "count": 424}, {"date": "2026-10-29", "count": 427}, {"date": "2026-10-30", "count": 357}, {"date": "2026-10-31", "count": 362}, {"date": "2026-11-01", "count": 387}];
+const labels = data.map(r => r.date);
+const counts = data.map(r => r.count);
+new Chart(document.getElementById('dailyChart'), {
+  type: 'line',
+  data: {
+    labels,
+    datasets: [{
+      label: '宿泊先件数',
+      data: counts,
+      borderColor: '#FF385C',
+      backgroundColor: 'rgba(255,56,92,0.10)',
+      fill: true,
+      tension: 0.25,
+      pointRadius: 0,
+      borderWidth: 2,
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false }, title: { display: true, text: '日別在庫件数（チェックイン日ベース）' } },
+    scales: { x: { ticks: { maxTicksLimit: 12 } }, y: { beginAtZero: false } },
+  }
 });
 </script>
 </body>
