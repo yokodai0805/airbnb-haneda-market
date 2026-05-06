@@ -2,87 +2,72 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>羽田空港エリア 競合市場在庫数 (2026-05-06)</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<title>羽田空港エリア競合在庫数（2026-05-07）</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-body { font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif; margin: 16px; background: #f5f7fa; color: #222; }
-h1 { font-size: 20px; margin: 0 0 6px 0; }
-.sub { color: #666; font-size: 12px; margin-bottom: 14px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-bottom: 16px; }
-.card { background: white; padding: 12px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-.card .label { font-size: 11px; color: #888; }
-.card .value { font-size: 20px; font-weight: bold; color: #2c5aa0; }
-.card .delta { font-size: 12px; }
-.delta.up { color: #d04444; }
-.delta.down { color: #2c8a2c; }
-.chart-box { background: white; padding: 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 16px; }
-.month-box { background: white; padding: 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-table { border-collapse: collapse; width: 100%; font-size: 13px; }
-th, td { border: 1px solid #ddd; padding: 6px 10px; text-align: right; }
-th { background: #4472C4; color: white; }
-td:first-child { text-align: left; font-weight: bold; }
+  body { font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif; margin: 20px; background: #f5f5f5; color: #222; }
+  h1 { color: #333; }
+  .summary { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+  .summary-item { padding: 10px; border-left: 4px solid #4472C4; background: #f9f9f9; }
+  .summary-item .label { font-size: 12px; color: #666; }
+  .summary-item .value { font-size: 22px; font-weight: bold; color: #333; }
+  .chart-container { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; }
+  canvas { max-height: 450px; }
+  .meta { color: #888; font-size: 12px; }
+  .pos { color: #d9534f; }
+  .neg { color: #5cb85c; }
 </style>
 </head>
 <body>
 <h1>羽田空港エリア 競合市場在庫数</h1>
-<div class="sub">取得日: 2026-05-06 / 条件: まるまる貸切 × ゲストチョイス × 大人5人 × 1泊 / 期間: 今日〜+183日</div>
-<div class="cards">
-<div class="card"><div class="label">当日</div><div class="value">317</div><div class="delta up">前日比 +131</div></div>
-<div class="card"><div class="label">1週間後</div><div class="value">322</div></div>
-<div class="card"><div class="label">30日後</div><div class="value">388</div></div>
-<div class="card"><div class="label">60日後</div><div class="value">467</div></div>
-<div class="card"><div class="label">90日後</div><div class="value">574</div></div>
-<div class="card"><div class="label">180日後</div><div class="value">464</div></div>
-<div class="card"><div class="label">最小</div><div class="value">127</div></div>
-<div class="card"><div class="label">最大</div><div class="value">664</div></div>
-<div class="card"><div class="label">平均</div><div class="value">492.5</div></div>
-<div class="card"><div class="label">中央値</div><div class="value">508</div></div>
+<p class="meta">取得日: 2026-05-07 ／ 条件: 羽田空港・まるまる貸切×ゲストチョイス・大人5人・1泊 ／ 期間: 2026-05-07〜2026-11-06（184日間）</p>
+
+<div class="summary">
+  <h2>サマリ</h2>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="label">当日件数</div><div class="value">357 件 <span class="neg">(-84)</span></div></div>
+    <div class="summary-item"><div class="label">1週間後</div><div class="value">227 件</div></div>
+    <div class="summary-item"><div class="label">30日後</div><div class="value">383 件</div></div>
+    <div class="summary-item"><div class="label">60日後</div><div class="value">475 件</div></div>
+    <div class="summary-item"><div class="label">90日後</div><div class="value">563 件</div></div>
+    <div class="summary-item"><div class="label">180日後</div><div class="value">458 件</div></div>
+    <div class="summary-item"><div class="label">期間最小</div><div class="value">126 件</div></div>
+    <div class="summary-item"><div class="label">期間最大</div><div class="value">664 件</div></div>
+    <div class="summary-item"><div class="label">期間平均</div><div class="value">492.6 件</div></div>
+    <div class="summary-item"><div class="label">期間中央値</div><div class="value">508.5 件</div></div>
+  </div>
 </div>
-<div class="chart-box"><canvas id="chart" height="120"></canvas></div>
-<div class="month-box"><h3 style="margin-top:0">月別サマリ</h3><table><thead><tr><th style="text-align:left">月</th><th>平均</th><th>最小</th><th>最大</th><th>日数</th></tr></thead><tbody>
-<tr><td>2026-05</td><td>268.9</td><td>127</td><td>441</td><td>26</td></tr>
-<tr><td>2026-06</td><td>452.2</td><td>343</td><td>510</td><td>30</td></tr>
-<tr><td>2026-07</td><td>496.1</td><td>419</td><td>557</td><td>31</td></tr>
-<tr><td>2026-08</td><td>597.1</td><td>513</td><td>664</td><td>31</td></tr>
-<tr><td>2026-09</td><td>601.9</td><td>532</td><td>645</td><td>30</td></tr>
-<tr><td>2026-10</td><td>506.7</td><td>463</td><td>549</td><td>31</td></tr>
-<tr><td>2026-11</td><td>479.2</td><td>458</td><td>535</td><td>4</td></tr>
-</tbody></table></div>
+
+<div class="chart-container">
+  <h2>日別在庫数推移</h2>
+  <canvas id="dailyChart"></canvas>
+</div>
+
+<div class="chart-container">
+  <h2>月別平均件数</h2>
+  <canvas id="monthlyChart"></canvas>
+</div>
+
 <script>
-const data = [{"date": "2026-05-06", "count": 317, "plus": false}, {"date": "2026-05-07", "count": 441, "plus": false}, {"date": "2026-05-08", "count": 403, "plus": false}, {"date": "2026-05-09", "count": 358, "plus": false}, {"date": "2026-05-10", "count": 423, "plus": false}, {"date": "2026-05-11", "count": 379, "plus": false}, {"date": "2026-05-12", "count": 339, "plus": false}, {"date": "2026-05-13", "count": 322, "plus": false}, {"date": "2026-05-14", "count": 231, "plus": false}, {"date": "2026-05-15", "count": 199, "plus": false}, {"date": "2026-05-16", "count": 134, "plus": false}, {"date": "2026-05-17", "count": 232, "plus": false}, {"date": "2026-05-18", "count": 276, "plus": false}, {"date": "2026-05-19", "count": 284, "plus": false}, {"date": "2026-05-20", "count": 252, "plus": false}, {"date": "2026-05-21", "count": 205, "plus": false}, {"date": "2026-05-22", "count": 169, "plus": false}, {"date": "2026-05-23", "count": 127, "plus": false}, {"date": "2026-05-24", "count": 200, "plus": false}, {"date": "2026-05-25", "count": 235, "plus": false}, {"date": "2026-05-26", "count": 259, "plus": false}, {"date": "2026-05-27", "count": 272, "plus": false}, {"date": "2026-05-28", "count": 237, "plus": false}, {"date": "2026-05-29", "count": 227, "plus": false}, {"date": "2026-05-30", "count": 191, "plus": false}, {"date": "2026-05-31", "count": 280, "plus": false}, {"date": "2026-06-01", "count": 343, "plus": false}, {"date": "2026-06-02", "count": 365, "plus": false}, {"date": "2026-06-03", "count": 368, "plus": false}, {"date": "2026-06-04", "count": 394, "plus": false}, {"date": "2026-06-05", "count": 388, "plus": false}, {"date": "2026-06-06", "count": 383, "plus": false}, {"date": "2026-06-07", "count": 438, "plus": false}, {"date": "2026-06-08", "count": 467, "plus": false}, {"date": "2026-06-09", "count": 486, "plus": false}, {"date": "2026-06-10", "count": 487, "plus": false}, {"date": "2026-06-11", "count": 486, "plus": false}, {"date": "2026-06-12", "count": 446, "plus": false}, {"date": "2026-06-13", "count": 413, "plus": false}, {"date": "2026-06-14", "count": 460, "plus": false}, {"date": "2026-06-15", "count": 468, "plus": false}, {"date": "2026-06-16", "count": 468, "plus": false}, {"date": "2026-06-17", "count": 470, "plus": false}, {"date": "2026-06-18", "count": 473, "plus": false}, {"date": "2026-06-19", "count": 439, "plus": false}, {"date": "2026-06-20", "count": 420, "plus": false}, {"date": "2026-06-21", "count": 493, "plus": false}, {"date": "2026-06-22", "count": 506, "plus": false}, {"date": "2026-06-23", "count": 510, "plus": false}, {"date": "2026-06-24", "count": 508, "plus": false}, {"date": "2026-06-25", "count": 477, "plus": false}, {"date": "2026-06-26", "count": 466, "plus": false}, {"date": "2026-06-27", "count": 450, "plus": false}, {"date": "2026-06-28", "count": 501, "plus": false}, {"date": "2026-06-29", "count": 494, "plus": false}, {"date": "2026-06-30", "count": 499, "plus": false}, {"date": "2026-07-01", "count": 478, "plus": false}, {"date": "2026-07-02", "count": 477, "plus": false}, {"date": "2026-07-03", "count": 456, "plus": false}, {"date": "2026-07-04", "count": 419, "plus": false}, {"date": "2026-07-05", "count": 467, "plus": false}, {"date": "2026-07-06", "count": 476, "plus": false}, {"date": "2026-07-07", "count": 488, "plus": false}, {"date": "2026-07-08", "count": 489, "plus": false}, {"date": "2026-07-09", "count": 473, "plus": false}, {"date": "2026-07-10", "count": 463, "plus": false}, {"date": "2026-07-11", "count": 431, "plus": false}, {"date": "2026-07-12", "count": 495, "plus": false}, {"date": "2026-07-13", "count": 503, "plus": false}, {"date": "2026-07-14", "count": 491, "plus": false}, {"date": "2026-07-15", "count": 494, "plus": false}, {"date": "2026-07-16", "count": 484, "plus": false}, {"date": "2026-07-17", "count": 485, "plus": false}, {"date": "2026-07-18", "count": 453, "plus": false}, {"date": "2026-07-19", "count": 489, "plus": false}, {"date": "2026-07-20", "count": 530, "plus": false}, {"date": "2026-07-21", "count": 537, "plus": false}, {"date": "2026-07-22", "count": 539, "plus": false}, {"date": "2026-07-23", "count": 542, "plus": false}, {"date": "2026-07-24", "count": 502, "plus": false}, {"date": "2026-07-25", "count": 470, "plus": false}, {"date": "2026-07-26", "count": 521, "plus": false}, {"date": "2026-07-27", "count": 539, "plus": false}, {"date": "2026-07-28", "count": 531, "plus": false}, {"date": "2026-07-29", "count": 557, "plus": false}, {"date": "2026-07-30", "count": 554, "plus": false}, {"date": "2026-07-31", "count": 545, "plus": false}, {"date": "2026-08-01", "count": 513, "plus": false}, {"date": "2026-08-02", "count": 551, "plus": false}, {"date": "2026-08-03", "count": 587, "plus": false}, {"date": "2026-08-04", "count": 574, "plus": false}, {"date": "2026-08-05", "count": 562, "plus": false}, {"date": "2026-08-06", "count": 562, "plus": false}, {"date": "2026-08-07", "count": 554, "plus": false}, {"date": "2026-08-08", "count": 540, "plus": false}, {"date": "2026-08-09", "count": 575, "plus": false}, {"date": "2026-08-10", "count": 584, "plus": false}, {"date": "2026-08-11", "count": 594, "plus": false}, {"date": "2026-08-12", "count": 588, "plus": false}, {"date": "2026-08-13", "count": 584, "plus": false}, {"date": "2026-08-14", "count": 581, "plus": false}, {"date": "2026-08-15", "count": 575, "plus": false}, {"date": "2026-08-16", "count": 601, "plus": false}, {"date": "2026-08-17", "count": 613, "plus": false}, {"date": "2026-08-18", "count": 620, "plus": false}, {"date": "2026-08-19", "count": 618, "plus": false}, {"date": "2026-08-20", "count": 611, "plus": false}, {"date": "2026-08-21", "count": 602, "plus": false}, {"date": "2026-08-22", "count": 605, "plus": false}, {"date": "2026-08-23", "count": 623, "plus": false}, {"date": "2026-08-24", "count": 627, "plus": false}, {"date": "2026-08-25", "count": 631, "plus": false}, {"date": "2026-08-26", "count": 631, "plus": false}, {"date": "2026-08-27", "count": 638, "plus": false}, {"date": "2026-08-28", "count": 628, "plus": false}, {"date": "2026-08-29", "count": 620, "plus": false}, {"date": "2026-08-30", "count": 653, "plus": false}, {"date": "2026-08-31", "count": 664, "plus": false}, {"date": "2026-09-01", "count": 639, "plus": false}, {"date": "2026-09-02", "count": 629, "plus": false}, {"date": "2026-09-03", "count": 624, "plus": false}, {"date": "2026-09-04", "count": 611, "plus": false}, {"date": "2026-09-05", "count": 599, "plus": false}, {"date": "2026-09-06", "count": 625, "plus": false}, {"date": "2026-09-07", "count": 627, "plus": false}, {"date": "2026-09-08", "count": 638, "plus": false}, {"date": "2026-09-09", "count": 645, "plus": false}, {"date": "2026-09-10", "count": 634, "plus": false}, {"date": "2026-09-11", "count": 629, "plus": false}, {"date": "2026-09-12", "count": 616, "plus": false}, {"date": "2026-09-13", "count": 640, "plus": false}, {"date": "2026-09-14", "count": 638, "plus": false}, {"date": "2026-09-15", "count": 637, "plus": false}, {"date": "2026-09-16", "count": 617, "plus": false}, {"date": "2026-09-17", "count": 602, "plus": false}, {"date": "2026-09-18", "count": 568, "plus": false}, {"date": "2026-09-19", "count": 532, "plus": false}, {"date": "2026-09-20", "count": 546, "plus": false}, {"date": "2026-09-21", "count": 558, "plus": false}, {"date": "2026-09-22", "count": 553, "plus": false}, {"date": "2026-09-23", "count": 569, "plus": false}, {"date": "2026-09-24", "count": 580, "plus": false}, {"date": "2026-09-25", "count": 568, "plus": false}, {"date": "2026-09-26", "count": 563, "plus": false}, {"date": "2026-09-27", "count": 595, "plus": false}, {"date": "2026-09-28", "count": 594, "plus": false}, {"date": "2026-09-29", "count": 598, "plus": false}, {"date": "2026-09-30", "count": 584, "plus": false}, {"date": "2026-10-01", "count": 549, "plus": false}, {"date": "2026-10-02", "count": 525, "plus": false}, {"date": "2026-10-03", "count": 494, "plus": false}, {"date": "2026-10-04", "count": 507, "plus": false}, {"date": "2026-10-05", "count": 521, "plus": false}, {"date": "2026-10-06", "count": 519, "plus": false}, {"date": "2026-10-07", "count": 513, "plus": false}, {"date": "2026-10-08", "count": 491, "plus": false}, {"date": "2026-10-09", "count": 488, "plus": false}, {"date": "2026-10-10", "count": 469, "plus": false}, {"date": "2026-10-11", "count": 494, "plus": false}, {"date": "2026-10-12", "count": 512, "plus": false}, {"date": "2026-10-13", "count": 519, "plus": false}, {"date": "2026-10-14", "count": 517, "plus": false}, {"date": "2026-10-15", "count": 500, "plus": false}, {"date": "2026-10-16", "count": 485, "plus": false}, {"date": "2026-10-17", "count": 463, "plus": false}, {"date": "2026-10-18", "count": 494, "plus": false}, {"date": "2026-10-19", "count": 501, "plus": false}, {"date": "2026-10-20", "count": 514, "plus": false}, {"date": "2026-10-21", "count": 510, "plus": false}, {"date": "2026-10-22", "count": 512, "plus": false}, {"date": "2026-10-23", "count": 508, "plus": false}, {"date": "2026-10-24", "count": 490, "plus": false}, {"date": "2026-10-25", "count": 527, "plus": false}, {"date": "2026-10-26", "count": 529, "plus": false}, {"date": "2026-10-27", "count": 524, "plus": false}, {"date": "2026-10-28", "count": 512, "plus": false}, {"date": "2026-10-29", "count": 512, "plus": false}, {"date": "2026-10-30", "count": 499, "plus": false}, {"date": "2026-10-31", "count": 511, "plus": false}, {"date": "2026-11-01", "count": 535, "plus": false}, {"date": "2026-11-02", "count": 464, "plus": false}, {"date": "2026-11-03", "count": 458, "plus": false}, {"date": "2026-11-04", "count": 460, "plus": false}];
-const labels = data.map(d => d.date);
-const values = data.map(d => d.count);
-const ctx = document.getElementById('chart').getContext('2d');
-new Chart(ctx, {
+const dailyData = {
+  labels: ["2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-24", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-05-31", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01", "2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06"],
+  datasets: [{ label: '在庫数', data: [357, 397, 357, 419, 378, 337, 319, 227, 198, 134, 234, 276, 283, 251, 205, 169, 126, 201, 235, 259, 273, 237, 226, 191, 279, 342, 363, 368, 393, 391, 383, 439, 467, 487, 489, 487, 446, 413, 461, 469, 469, 469, 472, 439, 419, 493, 506, 510, 510, 475, 465, 450, 501, 494, 499, 478, 477, 456, 419, 467, 475, 486, 490, 475, 464, 431, 494, 503, 492, 495, 485, 485, 453, 489, 528, 536, 538, 542, 501, 469, 521, 539, 531, 557, 553, 545, 513, 553, 587, 585, 563, 564, 554, 539, 574, 583, 594, 588, 585, 582, 576, 602, 613, 620, 618, 610, 600, 603, 621, 626, 631, 631, 636, 627, 619, 653, 664, 639, 629, 624, 611, 599, 625, 627, 638, 645, 634, 629, 616, 640, 638, 637, 616, 602, 568, 530, 546, 558, 553, 569, 580, 568, 563, 595, 594, 598, 583, 548, 524, 493, 508, 521, 519, 512, 490, 488, 469, 494, 512, 519, 517, 500, 485, 463, 494, 501, 514, 509, 511, 508, 489, 527, 529, 524, 514, 511, 499, 510, 535, 527, 458, 459, 448, 433], borderColor: '#4472C4', backgroundColor: 'rgba(68, 114, 196, 0.1)', tension: 0.2, pointRadius: 1, fill: true }]
+};
+new Chart(document.getElementById('dailyChart'), {
   type: 'line',
-  data: {
-    labels,
-    datasets: [{
-      label: '在庫数',
-      data: values,
-      borderColor: '#2c5aa0',
-      backgroundColor: 'rgba(44, 90, 160, 0.1)',
-      fill: true,
-      tension: 0.2,
-      pointRadius: 1.5,
-      pointHoverRadius: 5,
-      borderWidth: 2,
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: true },
-      title: { display: true, text: '羽田空港エリア 競合市場在庫数 推移 (183日)' },
-      tooltip: { mode: 'index', intersect: false }
-    },
-    interaction: { mode: 'nearest', axis: 'x', intersect: false },
-    scales: {
-      y: { beginAtZero: false, title: { display: true, text: '在庫数' } },
-      x: { ticks: { maxTicksLimit: 20, autoSkip: true } }
-    }
-  }
+  data: dailyData,
+  options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } }, scales: { x: { ticks: { maxTicksLimit: 20 } } } }
+});
+
+const monthlyData = {
+  labels: ["2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10", "2026-11"],
+  datasets: [{ label: '月別平均', data: [262.7, 452.3, 495.9, 597.2, 601.8, 506.5, 476.7], backgroundColor: '#5b9bd5', borderColor: '#2e75b6', borderWidth: 2 }]
+};
+new Chart(document.getElementById('monthlyChart'), {
+  type: 'bar',
+  data: monthlyData,
+  options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
 });
 </script>
 </body>
