@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羽田空港エリア Airbnb競合市場在庫数 - 2026-05-08</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; margin: 0; background: #f5f5f7; color: #1d1d1f; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 24px; margin: 10px 0; }
+  .subtitle { color: #6e6e73; margin-bottom: 20px; font-size: 14px; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .metric-card { background: white; padding: 16px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .metric-label { font-size: 12px; color: #6e6e73; }
+  .metric-value { font-size: 28px; font-weight: 600; margin-top: 4px; }
+  .metric-sub { font-size: 12px; color: #6e6e73; margin-top: 2px; }
+  .diff-pos { color: #d70015; }
+  .diff-neg { color: #007aff; }
+  .chart-container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 20px; }
+  .chart-container h2 { font-size: 16px; margin: 0 0 12px; }
+  .footer { text-align: center; color: #6e6e73; font-size: 12px; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>羽田空港エリア Airbnb競合市場在庫数</h1>
+  <div class="subtitle">条件：羽田空港エリア・まるまる貸切・ゲストチョイス・大人5人・1泊　／ 集計日：2026-05-08</div>
+
+  <div class="metrics">
+    <div class="metric-card">
+      <div class="metric-label">当日件数</div>
+      <div class="metric-value">277</div>
+      <div class="metric-sub diff-neg">前日比 -120件</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">1週間後</div>
+      <div class="metric-value">185</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">30日後</div>
+      <div class="metric-value">430</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">60日後</div>
+      <div class="metric-value">478</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">90日後</div>
+      <div class="metric-value">571</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">180日後</div>
+      <div class="metric-value">447</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">平均（183日）</div>
+      <div class="metric-value">488</div>
+      <div class="metric-sub">中央値 508</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">最小 / 最大</div>
+      <div class="metric-value">117 / 663</div>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h2>日別在庫数推移（183日先まで）</h2>
+    <canvas id="dailyChart" height="100"></canvas>
+  </div>
+
+  <div class="chart-container">
+    <h2>月別平均</h2>
+    <canvas id="monthlyChart" height="100"></canvas>
+  </div>
+
+  <div class="footer">© 2026 アピチェ大森 K803 デイリーモニタリング</div>
+</div>
+<script>
+const dates = ["2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-24", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-05-31", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01", "2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-07"];
+const counts = [277, 327, 400, 361, 328, 300, 218, 185, 127, 219, 268, 266, 237, 201, 167, 117, 191, 221, 256, 261, 231, 217, 173, 266, 328, 354, 361, 383, 370, 379, 430, 454, 476, 475, 479, 431, 398, 448, 459, 458, 452, 452, 424, 412, 477, 490, 497, 494, 463, 454, 443, 497, 491, 494, 483, 479, 455, 413, 460, 467, 478, 481, 470, 461, 429, 488, 503, 498, 496, 483, 482, 448, 483, 519, 527, 531, 533, 497, 469, 518, 534, 524, 547, 543, 544, 513, 549, 585, 591, 587, 571, 559, 543, 573, 581, 592, 586, 583, 580, 575, 598, 610, 618, 615, 606, 598, 603, 622, 627, 627, 627, 636, 629, 622, 653, 663, 633, 625, 622, 607, 592, 618, 619, 627, 640, 628, 624, 613, 638, 635, 631, 613, 598, 562, 525, 535, 547, 547, 565, 579, 565, 562, 590, 593, 594, 579, 543, 523, 492, 505, 521, 519, 511, 490, 487, 468, 493, 514, 523, 524, 508, 488, 459, 490, 502, 517, 512, 513, 510, 490, 522, 528, 525, 512, 508, 499, 509, 524, 536, 527, 447, 432, 421, 413];
+const months = ["2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10", "2026-11"];
+const monthAvgs = [242.2, 440.8, 491.7, 597.5, 596.9, 506.6, 471.4];
+
+new Chart(document.getElementById('dailyChart'), {
+  type: 'line',
+  data: { labels: dates, datasets: [{ label: '件数', data: counts, borderColor: '#ff5a5f', backgroundColor: 'rgba(255,90,95,0.1)', tension: 0.3, fill: true, pointRadius: 0, pointHoverRadius: 4 }] },
+  options: { responsive: true, plugins: { legend: { display: false } }, scales: { x: { ticks: { maxTicksLimit: 12, autoSkip: true } } } }
+});
+
+new Chart(document.getElementById('monthlyChart'), {
+  type: 'bar',
+  data: { labels: months, datasets: [{ label: '月別平均件数', data: monthAvgs, backgroundColor: '#00a699' }] },
+  options: { responsive: true, plugins: { legend: { display: false } } }
+});
+</script>
+</body>
+</html>
