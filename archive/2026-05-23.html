@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>羽田空港エリア 競合市場在庫数 2026-05-23</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; margin: 20px; max-width: 1200px; background:#f8f9fa; color:#222; }
+  h1 { font-size: 1.4em; border-bottom: 3px solid #4472C4; padding-bottom: 6px; }
+  h2 { font-size: 1.05em; margin: 8px 0; color:#333; }
+  .meta { color:#555; font-size: 0.9em; margin-bottom: 12px; }
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; margin: 16px 0; }
+  .metric { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 8px 12px; }
+  .metric-label { font-size: 0.78em; color: #666; }
+  .metric-value { font-size: 1.4em; font-weight: bold; color: #2c5282; }
+  .chart-wrap { background: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); margin-bottom: 20px; }
+  table { border-collapse: collapse; width: 100%; background:#fff; }
+  th, td { border: 1px solid #ddd; padding: 6px 10px; text-align: right; font-size: 0.9em; }
+  th { background: #4472C4; color: #fff; }
+  td:first-child, th:first-child { text-align: left; }
+  .diff-pos { color: #c00; }
+  .diff-neg { color: #2c5282; }
+</style>
+</head>
+<body>
+<h1>羽田空港エリア 競合市場在庫数</h1>
+<div class="meta">基準日: 2026-05-23　|　検索条件: まるまる貸切 × ゲストチョイス × 大人5人 × 1泊　|　期間: 2026-05-23 〜 2026-11-23 (185日分)</div>
+
+<div class="metrics-grid">
+  <div class="metric"><div class="metric-label">当日件数</div><div class="metric-value">15</div></div>
+  <div class="metric"><div class="metric-label">前日比 (基準: 2026-05-17)</div><div class="metric-value diff-neg">-100</div></div>
+  <div class="metric"><div class="metric-label">1週間後</div><div class="metric-value">106</div></div>
+  <div class="metric"><div class="metric-label">30日後</div><div class="metric-value">413</div></div>
+  <div class="metric"><div class="metric-label">60日後</div><div class="metric-value">460</div></div>
+  <div class="metric"><div class="metric-label">90日後</div><div class="metric-value">533</div></div>
+  <div class="metric"><div class="metric-label">180日後</div><div class="metric-value">435</div></div>
+  <div class="metric"><div class="metric-label">期間 最小</div><div class="metric-value">15</div></div>
+  <div class="metric"><div class="metric-label">期間 最大</div><div class="metric-value">607</div></div>
+  <div class="metric"><div class="metric-label">期間 平均</div><div class="metric-value">446.89</div></div>
+  <div class="metric"><div class="metric-label">期間 中央値</div><div class="metric-value">455</div></div>
+</div>
+
+<div class="chart-wrap">
+  <h2>日別推移（折れ線）</h2>
+  <canvas id="dailyChart" height="100"></canvas>
+</div>
+
+<div class="chart-wrap">
+  <h2>月別平均</h2>
+  <canvas id="monthlyChart" height="80"></canvas>
+</div>
+
+<div class="chart-wrap">
+  <h2>月別サマリ</h2>
+  <table>
+    <thead><tr><th>月</th><th>平均件数</th></tr></thead>
+    <tbody>
+      <tr><td>2026-05</td><td>139.56</td></tr><tr><td>2026-06</td><td>366.87</td></tr><tr><td>2026-07</td><td>425.9</td></tr><tr><td>2026-08</td><td>531.13</td></tr><tr><td>2026-09</td><td>540.53</td></tr><tr><td>2026-10</td><td>445.29</td></tr><tr><td>2026-11</td><td>466.3</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+const labels = ["2026-05-23", "2026-05-24", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-05-31", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01", "2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-07", "2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22", "2026-11-23"];
+const counts = [15, 107, 152, 176, 204, 167, 131, 106, 198, 256, 298, 286, 282, 274, 269, 355, 379, 408, 404, 412, 364, 314, 365, 385, 406, 401, 385, 344, 317, 393, 413, 427, 434, 389, 383, 359, 434, 433, 437, 426, 407, 394, 352, 391, 398, 412, 424, 413, 401, 374, 439, 463, 455, 451, 425, 417, 375, 420, 454, 466, 460, 447, 406, 394, 440, 451, 448, 470, 462, 468, 428, 473, 500, 503, 510, 509, 490, 471, 495, 509, 516, 511, 513, 518, 516, 544, 559, 562, 554, 549, 533, 536, 558, 566, 567, 572, 577, 568, 560, 591, 607, 582, 582, 574, 559, 550, 573, 570, 571, 582, 577, 575, 555, 576, 576, 573, 561, 543, 507, 459, 467, 480, 486, 500, 512, 496, 502, 540, 535, 533, 520, 484, 454, 422, 437, 457, 457, 452, 428, 422, 398, 419, 446, 453, 461, 441, 429, 408, 437, 449, 468, 469, 464, 450, 431, 462, 466, 462, 449, 447, 436, 446, 469, 482, 484, 481, 469, 452, 443, 459, 471, 488, 489, 476, 482, 471, 498, 516, 516, 511, 435, 412, 380, 411, 430];
+new Chart(document.getElementById('dailyChart'), {
+  type: 'line',
+  data: { labels, datasets: [{ label: '在庫件数', data: counts, borderColor: '#4472C4', backgroundColor: 'rgba(68,114,196,0.15)', fill: true, tension: 0.2, pointRadius: 1.5 }] },
+  options: { responsive: true, plugins: { legend: { position: 'top' } }, scales: { x: { ticks: { maxTicksLimit: 20 } } } }
+});
+
+const mLabels = ["2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10", "2026-11"];
+const mVals = [139.56, 366.87, 425.9, 531.13, 540.53, 445.29, 466.3];
+new Chart(document.getElementById('monthlyChart'), {
+  type: 'bar',
+  data: { labels: mLabels, datasets: [{ label: '月別平均', data: mVals, backgroundColor: '#70ad47' }] },
+  options: { responsive: true, plugins: { legend: { display: false } } }
+});
+</script>
+</body>
+</html>
