@@ -1,8 +1,29 @@
 {
  "date": "2026-08-15",
- "generated": "2026-08-15",
- "segment": "Haneda / Entire home / Guest Favorite / 5 adults / 1 night",
- "days": [
+ "listing_id": "1586773976600642968",
+ "segment": "Hanedakuko / entire home / guest_favorite / adults=5 / 1 night",
+ "metrics": {
+  "today": 191,
+  "d7": 380,
+  "d30": 484,
+  "d60": 369,
+  "d90": 383,
+  "d180": 487,
+  "min": 191,
+  "max": 599,
+  "mean": 446.2,
+  "median": 453,
+  "monthly": {
+   "2026-08": 443.4,
+   "2026-09": 429.8,
+   "2026-10": 342.0,
+   "2026-11": 406.8,
+   "2026-12": 459.9,
+   "2027-01": 547.3,
+   "2027-02": 553.1
+  }
+ },
+ "data": [
   {
    "date": "2026-08-15",
    "count": 191,
@@ -917,11 +938,7 @@
    "date": "2027-02-13",
    "count": 478,
    "plus": false
-  },
-  {
-   "date": "2027-02-14",
-   "count": 513,
-   "plus": false
   }
- ]
+ ],
+ "note": "Collected via Airbnb SSR search results (structuredTitle count)."
 }
