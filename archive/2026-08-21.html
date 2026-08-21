@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Airbnb 競合市場在庫数 — 羽田空港エリア (2026-08-21)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--fg:#e8eaed;--mut:#9aa0a6;--acc:#ff5a5f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:24px}
+h1{font-size:20px;margin:0 0 4px}.sub{color:var(--mut);font-size:13px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:22px}
+.kpi{background:var(--card);border-radius:10px;padding:14px}
+.kpi .l{color:var(--mut);font-size:11px}.kpi .v{font-size:24px;font-weight:600;margin-top:4px}
+.card{background:var(--card);border-radius:12px;padding:18px;margin-bottom:20px}
+.card h2{font-size:14px;margin:0 0 12px;color:var(--mut);font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:7px 10px;text-align:right;border-bottom:1px solid #262a33}
+th:first-child,td:first-child{text-align:left}th{color:var(--mut);font-weight:500}
+.foot{color:var(--mut);font-size:11px;margin-top:20px;line-height:1.7}
+</style></head><body><div class="wrap">
+<h1>Airbnb 競合市場在庫数 — 羽田空港エリア</h1>
+<div class="sub">まるまる貸切 × ゲストチョイス × 大人5名 × 1泊 ／ 取得日 2026-08-21 ／ 184日分</div>
+<div class="grid">
+<div class="kpi"><div class="l">当日</div><div class="v">266</div></div>
+<div class="kpi"><div class="l">+7日</div><div class="v">465</div></div>
+<div class="kpi"><div class="l">+30日</div><div class="v">203</div></div>
+<div class="kpi"><div class="l">+90日</div><div class="v">398</div></div>
+<div class="kpi"><div class="l">+180日</div><div class="v">522</div></div>
+<div class="kpi"><div class="l">平均</div><div class="v">450</div></div>
+<div class="kpi"><div class="l">最小 / 最大</div><div class="v" style="font-size:18px">203 / 619</div></div>
+</div>
+<div class="card"><h2>日別在庫数</h2><canvas id="c1" height="110"></canvas></div>
+<div class="card"><h2>月別平均</h2><canvas id="c2" height="70"></canvas></div>
+<div class="card"><h2>月別サマリ</h2><table id="tbl"><thead><tr><th>月</th><th>平均在庫数</th></tr></thead><tbody></tbody></table></div>
+<div class="foot">出典: Airbnb 検索結果 (Hanedakuko--Japan, Entire home/apt, guest_favorite=true, adults=5, 1泊) のSSRレスポンス件数<br>
+アピチェ大森 日次モニタリング ／ 自動生成</div>
+</div>
+<script>
+const L=["2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01", "2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-07", "2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22", "2026-11-23", "2026-11-24", "2026-11-25", "2026-11-26", "2026-11-27", "2026-11-28", "2026-11-29", "2026-11-30", "2026-12-01", "2026-12-02", "2026-12-03", "2026-12-04", "2026-12-05", "2026-12-06", "2026-12-07", "2026-12-08", "2026-12-09", "2026-12-10", "2026-12-11", "2026-12-12", "2026-12-13", "2026-12-14", "2026-12-15", "2026-12-16", "2026-12-17", "2026-12-18", "2026-12-19", "2026-12-20", "2026-12-21", "2026-12-22", "2026-12-23", "2026-12-24", "2026-12-25", "2026-12-26", "2026-12-27", "2026-12-28", "2026-12-29", "2026-12-30", "2026-12-31", "2027-01-01", "2027-01-02", "2027-01-03", "2027-01-04", "2027-01-05", "2027-01-06", "2027-01-07", "2027-01-08", "2027-01-09", "2027-01-10", "2027-01-11", "2027-01-12", "2027-01-13", "2027-01-14", "2027-01-15", "2027-01-16", "2027-01-17", "2027-01-18", "2027-01-19", "2027-01-20", "2027-01-21", "2027-01-22", "2027-01-23", "2027-01-24", "2027-01-25", "2027-01-26", "2027-01-27", "2027-01-28", "2027-01-29", "2027-01-30", "2027-01-31", "2027-02-01", "2027-02-02", "2027-02-03", "2027-02-04", "2027-02-05", "2027-02-06", "2027-02-07", "2027-02-08", "2027-02-09", "2027-02-10", "2027-02-11", "2027-02-12", "2027-02-13", "2027-02-14", "2027-02-15", "2027-02-16", "2027-02-17", "2027-02-18", "2027-02-19", "2027-02-20"], C=[266, 312, 442, 448, 477, 487, 499, 465, 413, 511, 575, 522, 489, 464, 407, 382, 445, 458, 475, 496, 464, 449, 404, 480, 492, 525, 513, 467, 399, 247, 203, 256, 331, 426, 422, 406, 388, 458, 466, 455, 436, 365, 308, 265, 305, 316, 331, 333, 301, 306, 230, 269, 337, 347, 368, 321, 304, 284, 330, 329, 351, 335, 334, 317, 298, 336, 338, 372, 375, 353, 328, 318, 369, 403, 398, 403, 403, 382, 360, 391, 409, 443, 439, 398, 392, 389, 424, 445, 461, 444, 398, 374, 312, 343, 391, 415, 424, 422, 404, 389, 448, 485, 490, 491, 484, 479, 490, 516, 523, 518, 511, 496, 494, 478, 510, 508, 508, 501, 503, 492, 457, 469, 468, 469, 453, 437, 402, 381, 367, 349, 328, 316, 305, 336, 404, 480, 533, 555, 547, 539, 526, 525, 543, 562, 563, 571, 573, 547, 542, 579, 583, 579, 591, 580, 569, 569, 588, 594, 590, 590, 592, 586, 579, 613, 619, 609, 610, 608, 575, 561, 578, 576, 595, 599, 585, 576, 577, 615, 619, 605, 522, 518, 502, 500], MK=["2026-08", "2026-09", "2026-10", "2026-11", "2026-12", "2027-01", "2027-02"], MV=[445, 428, 323, 405, 458, 553, 577];
+const g=(ctx)=>{const gr=ctx.createLinearGradient(0,0,0,300);gr.addColorStop(0,'rgba(255,90,95,.45)');gr.addColorStop(1,'rgba(255,90,95,0)');return gr;};
+Chart.defaults.color='#9aa0a6';Chart.defaults.borderColor='#262a33';
+new Chart(document.getElementById('c1'),{type:'line',data:{labels:L,datasets:[{label:'在庫数',data:C,borderColor:'#ff5a5f',backgroundColor:(c)=>g(c.chart.ctx),fill:true,pointRadius:0,borderWidth:2,tension:.25}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false}},scales:{x:{ticks:{maxTicksLimit:16,autoSkip:true}},y:{beginAtZero:false}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:MK,datasets:[{label:'月別平均',data:MV,backgroundColor:'#ff5a5f'}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}});
+const tb=document.querySelector('#tbl tbody');MK.forEach((m,i)=>{const tr=document.createElement('tr');tr.innerHTML='<td>'+m+'</td><td>'+MV[i]+'</td>';tb.appendChild(tr);});
+</script></body></html>
