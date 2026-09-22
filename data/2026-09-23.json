@@ -1,0 +1,947 @@
+{
+  "date": "2026-09-23",
+  "today_count": 335,
+  "plus": false,
+  "prev_day_count": null,
+  "diff_from_prev_day": null,
+  "plus7d": 379,
+  "plus30d": 240,
+  "plus60d": 234,
+  "plus90d": 420,
+  "plus180d": 428,
+  "range_min": 100,
+  "range_max": 602,
+  "range_avg": 422.4,
+  "range_median": 437.0,
+  "monthly_avg": {
+    "2026-09": 398.4,
+    "2026-10": 233.9,
+    "2026-11": 322.5,
+    "2026-12": 401.5,
+    "2027-01": 521.8,
+    "2027-02": 576.4,
+    "2027-03": 513.8
+  },
+  "records": [
+    {
+      "date": "2026-09-23",
+      "count": 335,
+      "plus": false
+    },
+    {
+      "date": "2026-09-24",
+      "count": 383,
+      "plus": false
+    },
+    {
+      "date": "2026-09-25",
+      "count": 369,
+      "plus": false
+    },
+    {
+      "date": "2026-09-26",
+      "count": 336,
+      "plus": false
+    },
+    {
+      "date": "2026-09-27",
+      "count": 461,
+      "plus": false
+    },
+    {
+      "date": "2026-09-28",
+      "count": 476,
+      "plus": false
+    },
+    {
+      "date": "2026-09-29",
+      "count": 448,
+      "plus": false
+    },
+    {
+      "date": "2026-09-30",
+      "count": 379,
+      "plus": false
+    },
+    {
+      "date": "2026-10-01",
+      "count": 271,
+      "plus": false
+    },
+    {
+      "date": "2026-10-02",
+      "count": 198,
+      "plus": false
+    },
+    {
+      "date": "2026-10-03",
+      "count": 116,
+      "plus": false
+    },
+    {
+      "date": "2026-10-04",
+      "count": 208,
+      "plus": false
+    },
+    {
+      "date": "2026-10-05",
+      "count": 226,
+      "plus": false
+    },
+    {
+      "date": "2026-10-06",
+      "count": 267,
+      "plus": false
+    },
+    {
+      "date": "2026-10-07",
+      "count": 281,
+      "plus": false
+    },
+    {
+      "date": "2026-10-08",
+      "count": 239,
+      "plus": false
+    },
+    {
+      "date": "2026-10-09",
+      "count": 208,
+      "plus": false
+    },
+    {
+      "date": "2026-10-10",
+      "count": 100,
+      "plus": false
+    },
+    {
+      "date": "2026-10-11",
+      "count": 145,
+      "plus": false
+    },
+    {
+      "date": "2026-10-12",
+      "count": 259,
+      "plus": false
+    },
+    {
+      "date": "2026-10-13",
+      "count": 275,
+      "plus": false
+    },
+    {
+      "date": "2026-10-14",
+      "count": 292,
+      "plus": false
+    },
+    {
+      "date": "2026-10-15",
+      "count": 221,
+      "plus": false
+    },
+    {
+      "date": "2026-10-16",
+      "count": 209,
+      "plus": false
+    },
+    {
+      "date": "2026-10-17",
+      "count": 179,
+      "plus": false
+    },
+    {
+      "date": "2026-10-18",
+      "count": 261,
+      "plus": false
+    },
+    {
+      "date": "2026-10-19",
+      "count": 260,
+      "plus": false
+    },
+    {
+      "date": "2026-10-20",
+      "count": 294,
+      "plus": false
+    },
+    {
+      "date": "2026-10-21",
+      "count": 284,
+      "plus": false
+    },
+    {
+      "date": "2026-10-22",
+      "count": 252,
+      "plus": false
+    },
+    {
+      "date": "2026-10-23",
+      "count": 240,
+      "plus": false
+    },
+    {
+      "date": "2026-10-24",
+      "count": 183,
+      "plus": false
+    },
+    {
+      "date": "2026-10-25",
+      "count": 251,
+      "plus": false
+    },
+    {
+      "date": "2026-10-26",
+      "count": 261,
+      "plus": false
+    },
+    {
+      "date": "2026-10-27",
+      "count": 296,
+      "plus": false
+    },
+    {
+      "date": "2026-10-28",
+      "count": 288,
+      "plus": false
+    },
+    {
+      "date": "2026-10-29",
+      "count": 247,
+      "plus": false
+    },
+    {
+      "date": "2026-10-30",
+      "count": 224,
+      "plus": false
+    },
+    {
+      "date": "2026-10-31",
+      "count": 217,
+      "plus": false
+    },
+    {
+      "date": "2026-11-01",
+      "count": 281,
+      "plus": false
+    },
+    {
+      "date": "2026-11-02",
+      "count": 327,
+      "plus": false
+    },
+    {
+      "date": "2026-11-03",
+      "count": 333,
+      "plus": false
+    },
+    {
+      "date": "2026-11-04",
+      "count": 335,
+      "plus": false
+    },
+    {
+      "date": "2026-11-05",
+      "count": 320,
+      "plus": false
+    },
+    {
+      "date": "2026-11-06",
+      "count": 283,
+      "plus": false
+    },
+    {
+      "date": "2026-11-07",
+      "count": 243,
+      "plus": false
+    },
+    {
+      "date": "2026-11-08",
+      "count": 309,
+      "plus": false
+    },
+    {
+      "date": "2026-11-09",
+      "count": 336,
+      "plus": false
+    },
+    {
+      "date": "2026-11-10",
+      "count": 335,
+      "plus": false
+    },
+    {
+      "date": "2026-11-11",
+      "count": 327,
+      "plus": false
+    },
+    {
+      "date": "2026-11-12",
+      "count": 302,
+      "plus": false
+    },
+    {
+      "date": "2026-11-13",
+      "count": 311,
+      "plus": false
+    },
+    {
+      "date": "2026-11-14",
+      "count": 287,
+      "plus": false
+    },
+    {
+      "date": "2026-11-15",
+      "count": 340,
+      "plus": false
+    },
+    {
+      "date": "2026-11-16",
+      "count": 364,
+      "plus": false
+    },
+    {
+      "date": "2026-11-17",
+      "count": 383,
+      "plus": false
+    },
+    {
+      "date": "2026-11-18",
+      "count": 359,
+      "plus": false
+    },
+    {
+      "date": "2026-11-19",
+      "count": 306,
+      "plus": false
+    },
+    {
+      "date": "2026-11-20",
+      "count": 281,
+      "plus": false
+    },
+    {
+      "date": "2026-11-21",
+      "count": 213,
+      "plus": false
+    },
+    {
+      "date": "2026-11-22",
+      "count": 234,
+      "plus": false
+    },
+    {
+      "date": "2026-11-23",
+      "count": 318,
+      "plus": false
+    },
+    {
+      "date": "2026-11-24",
+      "count": 335,
+      "plus": false
+    },
+    {
+      "date": "2026-11-25",
+      "count": 368,
+      "plus": false
+    },
+    {
+      "date": "2026-11-26",
+      "count": 362,
+      "plus": false
+    },
+    {
+      "date": "2026-11-27",
+      "count": 332,
+      "plus": false
+    },
+    {
+      "date": "2026-11-28",
+      "count": 324,
+      "plus": false
+    },
+    {
+      "date": "2026-11-29",
+      "count": 394,
+      "plus": false
+    },
+    {
+      "date": "2026-11-30",
+      "count": 434,
+      "plus": false
+    },
+    {
+      "date": "2026-12-01",
+      "count": 433,
+      "plus": false
+    },
+    {
+      "date": "2026-12-02",
+      "count": 424,
+      "plus": false
+    },
+    {
+      "date": "2026-12-03",
+      "count": 409,
+      "plus": false
+    },
+    {
+      "date": "2026-12-04",
+      "count": 398,
+      "plus": false
+    },
+    {
+      "date": "2026-12-05",
+      "count": 409,
+      "plus": false
+    },
+    {
+      "date": "2026-12-06",
+      "count": 461,
+      "plus": false
+    },
+    {
+      "date": "2026-12-07",
+      "count": 491,
+      "plus": false
+    },
+    {
+      "date": "2026-12-08",
+      "count": 477,
+      "plus": false
+    },
+    {
+      "date": "2026-12-09",
+      "count": 471,
+      "plus": false
+    },
+    {
+      "date": "2026-12-10",
+      "count": 447,
+      "plus": false
+    },
+    {
+      "date": "2026-12-11",
+      "count": 437,
+      "plus": false
+    },
+    {
+      "date": "2026-12-12",
+      "count": 425,
+      "plus": false
+    },
+    {
+      "date": "2026-12-13",
+      "count": 456,
+      "plus": false
+    },
+    {
+      "date": "2026-12-14",
+      "count": 461,
+      "plus": false
+    },
+    {
+      "date": "2026-12-15",
+      "count": 459,
+      "plus": false
+    },
+    {
+      "date": "2026-12-16",
+      "count": 443,
+      "plus": false
+    },
+    {
+      "date": "2026-12-17",
+      "count": 449,
+      "plus": false
+    },
+    {
+      "date": "2026-12-18",
+      "count": 437,
+      "plus": false
+    },
+    {
+      "date": "2026-12-19",
+      "count": 404,
+      "plus": false
+    },
+    {
+      "date": "2026-12-20",
+      "count": 425,
+      "plus": false
+    },
+    {
+      "date": "2026-12-21",
+      "count": 427,
+      "plus": false
+    },
+    {
+      "date": "2026-12-22",
+      "count": 420,
+      "plus": false
+    },
+    {
+      "date": "2026-12-23",
+      "count": 395,
+      "plus": false
+    },
+    {
+      "date": "2026-12-24",
+      "count": 377,
+      "plus": false
+    },
+    {
+      "date": "2026-12-25",
+      "count": 348,
+      "plus": false
+    },
+    {
+      "date": "2026-12-26",
+      "count": 315,
+      "plus": false
+    },
+    {
+      "date": "2026-12-27",
+      "count": 313,
+      "plus": false
+    },
+    {
+      "date": "2026-12-28",
+      "count": 283,
+      "plus": false
+    },
+    {
+      "date": "2026-12-29",
+      "count": 265,
+      "plus": false
+    },
+    {
+      "date": "2026-12-30",
+      "count": 253,
+      "plus": false
+    },
+    {
+      "date": "2026-12-31",
+      "count": 235,
+      "plus": false
+    },
+    {
+      "date": "2027-01-01",
+      "count": 289,
+      "plus": false
+    },
+    {
+      "date": "2027-01-02",
+      "count": 372,
+      "plus": false
+    },
+    {
+      "date": "2027-01-03",
+      "count": 455,
+      "plus": false
+    },
+    {
+      "date": "2027-01-04",
+      "count": 501,
+      "plus": false
+    },
+    {
+      "date": "2027-01-05",
+      "count": 527,
+      "plus": false
+    },
+    {
+      "date": "2027-01-06",
+      "count": 518,
+      "plus": false
+    },
+    {
+      "date": "2027-01-07",
+      "count": 510,
+      "plus": false
+    },
+    {
+      "date": "2027-01-08",
+      "count": 508,
+      "plus": false
+    },
+    {
+      "date": "2027-01-09",
+      "count": 496,
+      "plus": false
+    },
+    {
+      "date": "2027-01-10",
+      "count": 518,
+      "plus": false
+    },
+    {
+      "date": "2027-01-11",
+      "count": 543,
+      "plus": false
+    },
+    {
+      "date": "2027-01-12",
+      "count": 536,
+      "plus": false
+    },
+    {
+      "date": "2027-01-13",
+      "count": 546,
+      "plus": false
+    },
+    {
+      "date": "2027-01-14",
+      "count": 537,
+      "plus": false
+    },
+    {
+      "date": "2027-01-15",
+      "count": 524,
+      "plus": false
+    },
+    {
+      "date": "2027-01-16",
+      "count": 505,
+      "plus": false
+    },
+    {
+      "date": "2027-01-17",
+      "count": 547,
+      "plus": false
+    },
+    {
+      "date": "2027-01-18",
+      "count": 548,
+      "plus": false
+    },
+    {
+      "date": "2027-01-19",
+      "count": 542,
+      "plus": false
+    },
+    {
+      "date": "2027-01-20",
+      "count": 562,
+      "plus": false
+    },
+    {
+      "date": "2027-01-21",
+      "count": 538,
+      "plus": false
+    },
+    {
+      "date": "2027-01-22",
+      "count": 528,
+      "plus": false
+    },
+    {
+      "date": "2027-01-23",
+      "count": 516,
+      "plus": false
+    },
+    {
+      "date": "2027-01-24",
+      "count": 548,
+      "plus": false
+    },
+    {
+      "date": "2027-01-25",
+      "count": 567,
+      "plus": false
+    },
+    {
+      "date": "2027-01-26",
+      "count": 562,
+      "plus": false
+    },
+    {
+      "date": "2027-01-27",
+      "count": 567,
+      "plus": false
+    },
+    {
+      "date": "2027-01-28",
+      "count": 563,
+      "plus": false
+    },
+    {
+      "date": "2027-01-29",
+      "count": 562,
+      "plus": false
+    },
+    {
+      "date": "2027-01-30",
+      "count": 552,
+      "plus": false
+    },
+    {
+      "date": "2027-01-31",
+      "count": 588,
+      "plus": false
+    },
+    {
+      "date": "2027-02-01",
+      "count": 588,
+      "plus": false
+    },
+    {
+      "date": "2027-02-02",
+      "count": 577,
+      "plus": false
+    },
+    {
+      "date": "2027-02-03",
+      "count": 581,
+      "plus": false
+    },
+    {
+      "date": "2027-02-04",
+      "count": 578,
+      "plus": false
+    },
+    {
+      "date": "2027-02-05",
+      "count": 563,
+      "plus": false
+    },
+    {
+      "date": "2027-02-06",
+      "count": 538,
+      "plus": false
+    },
+    {
+      "date": "2027-02-07",
+      "count": 552,
+      "plus": false
+    },
+    {
+      "date": "2027-02-08",
+      "count": 549,
+      "plus": false
+    },
+    {
+      "date": "2027-02-09",
+      "count": 563,
+      "plus": false
+    },
+    {
+      "date": "2027-02-10",
+      "count": 567,
+      "plus": false
+    },
+    {
+      "date": "2027-02-11",
+      "count": 554,
+      "plus": false
+    },
+    {
+      "date": "2027-02-12",
+      "count": 549,
+      "plus": false
+    },
+    {
+      "date": "2027-02-13",
+      "count": 549,
+      "plus": false
+    },
+    {
+      "date": "2027-02-14",
+      "count": 584,
+      "plus": false
+    },
+    {
+      "date": "2027-02-15",
+      "count": 591,
+      "plus": false
+    },
+    {
+      "date": "2027-02-16",
+      "count": 598,
+      "plus": false
+    },
+    {
+      "date": "2027-02-17",
+      "count": 589,
+      "plus": false
+    },
+    {
+      "date": "2027-02-18",
+      "count": 587,
+      "plus": false
+    },
+    {
+      "date": "2027-02-19",
+      "count": 572,
+      "plus": false
+    },
+    {
+      "date": "2027-02-20",
+      "count": 565,
+      "plus": false
+    },
+    {
+      "date": "2027-02-21",
+      "count": 597,
+      "plus": false
+    },
+    {
+      "date": "2027-02-22",
+      "count": 602,
+      "plus": false
+    },
+    {
+      "date": "2027-02-23",
+      "count": 602,
+      "plus": false
+    },
+    {
+      "date": "2027-02-24",
+      "count": 595,
+      "plus": false
+    },
+    {
+      "date": "2027-02-25",
+      "count": 597,
+      "plus": false
+    },
+    {
+      "date": "2027-02-26",
+      "count": 583,
+      "plus": false
+    },
+    {
+      "date": "2027-02-27",
+      "count": 572,
+      "plus": false
+    },
+    {
+      "date": "2027-02-28",
+      "count": 597,
+      "plus": false
+    },
+    {
+      "date": "2027-03-01",
+      "count": 579,
+      "plus": false
+    },
+    {
+      "date": "2027-03-02",
+      "count": 572,
+      "plus": false
+    },
+    {
+      "date": "2027-03-03",
+      "count": 565,
+      "plus": false
+    },
+    {
+      "date": "2027-03-04",
+      "count": 537,
+      "plus": false
+    },
+    {
+      "date": "2027-03-05",
+      "count": 508,
+      "plus": false
+    },
+    {
+      "date": "2027-03-06",
+      "count": 492,
+      "plus": false
+    },
+    {
+      "date": "2027-03-07",
+      "count": 509,
+      "plus": false
+    },
+    {
+      "date": "2027-03-08",
+      "count": 544,
+      "plus": false
+    },
+    {
+      "date": "2027-03-09",
+      "count": 543,
+      "plus": false
+    },
+    {
+      "date": "2027-03-10",
+      "count": 545,
+      "plus": false
+    },
+    {
+      "date": "2027-03-11",
+      "count": 544,
+      "plus": false
+    },
+    {
+      "date": "2027-03-12",
+      "count": 539,
+      "plus": false
+    },
+    {
+      "date": "2027-03-13",
+      "count": 531,
+      "plus": false
+    },
+    {
+      "date": "2027-03-14",
+      "count": 533,
+      "plus": false
+    },
+    {
+      "date": "2027-03-15",
+      "count": 546,
+      "plus": false
+    },
+    {
+      "date": "2027-03-16",
+      "count": 530,
+      "plus": false
+    },
+    {
+      "date": "2027-03-17",
+      "count": 537,
+      "plus": false
+    },
+    {
+      "date": "2027-03-18",
+      "count": 528,
+      "plus": false
+    },
+    {
+      "date": "2027-03-19",
+      "count": 504,
+      "plus": false
+    },
+    {
+      "date": "2027-03-20",
+      "count": 493,
+      "plus": false
+    },
+    {
+      "date": "2027-03-21",
+      "count": 493,
+      "plus": false
+    },
+    {
+      "date": "2027-03-22",
+      "count": 428,
+      "plus": false
+    },
+    {
+      "date": "2027-03-23",
+      "count": 417,
+      "plus": false
+    },
+    {
+      "date": "2027-03-24",
+      "count": 418,
+      "plus": false
+    },
+    {
+      "date": "2027-03-25",
+      "count": 410,
+      "plus": false
+    }
+  ]
+}
